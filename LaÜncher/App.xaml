@@ -28,9 +28,7 @@
             <ContextMenu x:Key="TrayMenu"
                          Style="{StaticResource TrayContextMenu}">
                 <MenuItem Header="ÜSoftware HÜB"
-                       IsHitTestVisible="False"
-                       Focusable="False"
-                       Style="{StaticResource TrayMenuItemLabelStyle}"/>
+                          Style="{StaticResource TrayMenuItemLabelStyle}"/>
                 <Separator Style="{StaticResource TrayMenuSeparatorStyle}"/>
                 <MenuItem Header="Otwórz HUB"
                           Command="{Binding ShowMainCommand}"

@@ -29,30 +29,18 @@ namespace USofware_HUb.MVVM.ViewModel
         private void Login()
         {
             // TODO: Pokazanie okna logowania (dialog)
-            ShowMainWindow();
         }
 
         private void Register()
         {
             // TODO: Pokazanie okna rejestracji
-            ShowMainWindow();
         }
 
-        private void Offline()
-        {
-            ShowMainWindow();
-        }
+        private void Offline() => ShowMainWindow();
 
-        private void ShowMainWindow()
-        {
-            WindowManager.ShowSingleWindow(WindowManager.Windows.Main, true);
-        }
+        private void ShowMainWindow() => WindowManager.ShowSingleWindow(WindowManager.Windows.Main, true);
 
-        private void Shutdown()
-        {
-            WindowManager.CloseWindow(WindowManager.Windows.Login, true);
-            //Animations.CloseWithAnimation(Application.Current.Windows[0]);
-        }
+        private void Shutdown() => WindowManager.CloseWindow(WindowManager.Windows.Login, true);
 
         public event PropertyChangedEventHandler? PropertyChanged;
     }

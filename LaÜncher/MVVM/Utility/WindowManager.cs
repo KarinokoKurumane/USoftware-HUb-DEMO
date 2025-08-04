@@ -24,17 +24,16 @@ namespace USofware_HUb.MVVM.Utility
 
 
         /// <summary>
-        /// Wyświetla okno zamykając inne okna
+        /// Pokazuje okno zamykając pozostałe (jeśli wymagane)
         /// </summary>
-        /// <param name="windowKey"></param>
+        /// <param name="windowKey">Klucz okna jakie ma zostać otwarte</param>
+        /// <param name="animations">Czy ma być animacja zamknięcia zamykanego okna</param>
         public static void ShowSingleWindow(string windowKey, bool animations = false)
         {
             if (_windowRegistry.TryGetValue(windowKey, out var windowType))
             {
                 var window = (Window)Activator.CreateInstance(windowType)!;
                 var currentWindow = Application.Current.MainWindow;
-
-                window.Show();
 
                 switch (currentWindow)
                 {
@@ -50,6 +49,7 @@ namespace USofware_HUb.MVVM.Utility
                 }
 
                 Application.Current.MainWindow = window;
+                window.Show();
             }
         }
 
@@ -69,7 +69,8 @@ namespace USofware_HUb.MVVM.Utility
         /// <summary>
         /// Zamyka okno
         /// </summary>
-        /// <param name="windowKey"></param>
+        /// <param name="windowKey">Klucz zamykanego okna</param>
+        /// <param name="animations">Czy ma być animacja zamknięcia zamykanego okna</param>
         public static void CloseWindow(string windowKey, bool animations = false)
         {
             if (_windowRegistry.TryGetValue(windowKey, out var windowType))
@@ -88,12 +89,22 @@ namespace USofware_HUb.MVVM.Utility
             }
         }
 
+        /// <summary>
+        /// Pozyskuje klucz okna
+        /// </summary>
+        /// <param name="targetWindow">Okno, z którego ma zostać pozykany klucz</param>
+        /// <returns>Klucz okna, jeśli okno zostało zarejestrowane</returns>
         public static string? GetWindowKey(Window targetWindow)
         {
             var targetType = targetWindow.GetType();
             return _windowRegistry.FirstOrDefault(pair => pair.Value == targetType).Key;
         }
 
+        /// <summary>
+        /// Sprawdza, czy okno jest zarejestrowane
+        /// </summary>
+        /// <param name="window">Okno, które chce się sprawdzić</param>
+        /// <returns>True jest jest zarejestrowane</returns>
         public static bool IsRegistered(Window window) => GetWindowKey(window) != null;
     }
 }

@@ -1,6 +1,4 @@
-﻿using Hardcodet.Wpf.TaskbarNotification;
-using System.Windows;
-using USofware_HUb.MVVM.Views;
+﻿using System.Windows;
 
 namespace USofware_HUb.MVVM.Utility
 {

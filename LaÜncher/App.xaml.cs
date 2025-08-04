@@ -16,7 +16,6 @@ namespace USofware_HUb
             WindowManager.RegisterWindow<MainWindow>(WindowManager.Windows.Main);
             WindowManager.RegisterWindow<LoginView>(WindowManager.Windows.Login);
 
-            // Inicjalizacja okna pośredniczącego aplikacji
             WindowManager.ShowSingleWindow(WindowManager.Windows.Login);
         }
 

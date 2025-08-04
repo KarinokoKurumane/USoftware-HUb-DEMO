@@ -43,6 +43,7 @@
 
   <ItemGroup>
     <Folder Include="MVVM\Interfaces\" />
+    <Folder Include="MVVM\Views\Pages\" />
   </ItemGroup>
 
 </Project>
