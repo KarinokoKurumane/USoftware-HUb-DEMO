@@ -92,6 +92,8 @@ namespace USofware_HUb.MVVM.ViewModel
         private void ShowLoginPage()
         {
             // TODO: Logika otwierania okna logowania lub wylogowywania
+            
+            //TaskBarBehaviour.HideTray();
         }
 
         /// <summary>

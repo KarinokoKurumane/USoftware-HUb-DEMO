@@ -12,12 +12,12 @@ namespace USofware_HUb.MVVM.Utility
         /// <param name="window">Okno do animacji</param>
         public static void CloseWithAnimation(Window window)
         {
-            var win = window;
-            if (win == null) return;
+            var _window = window;
+            if (_window == null) return;
 
             var scale = new ScaleTransform(1.0, 1.0);
-            win.RenderTransformOrigin = new Point(0.5, 0.5);
-            win.RenderTransform = scale;
+            _window.RenderTransformOrigin = new Point(0.5, 0.5);
+            _window.RenderTransform = scale;
 
             var scaleAnim = new DoubleAnimation(1.0, 0.8, TimeSpan.FromMilliseconds(300));
             var fadeAnim = new DoubleAnimation(1.0, 0.0, TimeSpan.FromMilliseconds(300));
@@ -26,12 +26,12 @@ namespace USofware_HUb.MVVM.Utility
             sb.Children.Add(scaleAnim);
             sb.Children.Add(fadeAnim);
 
-            Storyboard.SetTarget(scaleAnim, win);
+            Storyboard.SetTarget(scaleAnim, _window);
             Storyboard.SetTargetProperty(scaleAnim, new PropertyPath("RenderTransform.ScaleX"));
-            Storyboard.SetTarget(fadeAnim, win);
+            Storyboard.SetTarget(fadeAnim, _window);
             Storyboard.SetTargetProperty(fadeAnim, new PropertyPath("Opacity"));
 
-            sb.Completed += (_, _) => win.Close();// Te sugestie są ambitne, no ale działa
+            sb.Completed += (_, _) => _window.Close();// Te sugestie są ambitne, no ale działa
             sb.Begin();
         }
 

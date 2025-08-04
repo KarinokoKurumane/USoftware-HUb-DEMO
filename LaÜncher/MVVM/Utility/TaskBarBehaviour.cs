@@ -30,6 +30,25 @@ namespace USofware_HUb.MVVM.Utility
             }
             return false;
         }
-        
+
+        internal static bool HideTray()
+        {
+            if (Application.Current.Resources["TrayIcon"] is TaskbarIcon trayIcon)
+            {
+                trayIcon.Visibility = Visibility.Collapsed;
+                return true;
+            }
+            return false;
+        }
+
+        internal static bool ShowTray()
+        {
+            if (Application.Current.Resources["TrayIcon"] is TaskbarIcon trayIcon)
+            {
+                trayIcon.Visibility = Visibility.Visible;
+                return true;
+            }
+            return false;
+        }
     }
 }

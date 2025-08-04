@@ -13,9 +13,11 @@ namespace USofware_HUb
         {
             base.OnStartup(e);
 
+            WindowManager.RegisterWindow<MainWindow>(WindowManager.Windows.Main);
+            WindowManager.RegisterWindow<LoginView>(WindowManager.Windows.Login);
+
             // Inicjalizacja okna pośredniczącego aplikacji
-            var loginView = new LoginView();
-            loginView.Show();
+            WindowManager.ShowSingleWindow(WindowManager.Windows.Login);
         }
 
         /// <summary>

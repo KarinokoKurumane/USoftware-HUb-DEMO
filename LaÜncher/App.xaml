@@ -21,6 +21,7 @@
                 <ResourceDictionary Source="Themes/TrayMenuItemStyle.xaml"/>
                 <ResourceDictionary Source="Themes/TrayMenuContextMenuStyle.xaml"/>
                 <ResourceDictionary Source="Themes/TrayMenuLabelStyle.xaml"/>
+                <ResourceDictionary Source="Themes/TrayMenuSeparatorStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <!-- Tray i jego logika (wymaga poprawy wizualnej bo ssie) -->
@@ -29,15 +30,18 @@
                 <MenuItem Header="ÜSoftware HÜB"
                        IsHitTestVisible="False"
                        Focusable="False"
-                       Style="{StaticResource TrayMenuItemStyle}"/>
+                       Style="{StaticResource TrayMenuItemLabelStyle}"/>
+                <Separator Style="{StaticResource TrayMenuSeparatorStyle}"/>
                 <MenuItem Header="Otwórz HUB"
                           Command="{Binding ShowMainCommand}"
                           Style="{StaticResource TrayMenuItemStyle}"/>
-                <Separator/>
                 <MenuItem Header="Ustawienia"
-                          Command=""
+                          Command="{Binding ShowSettingsPageCommand}"
                           Style="{StaticResource TrayMenuItemStyle}"/>
-                <Separator/>
+                <MenuItem Header="Wyloguj"
+                          Command="{Binding ShowLoginPageCommand}"
+                          Style="{StaticResource TrayMenuItemStyle}"/>
+                <Separator Style="{StaticResource TrayMenuSeparatorStyle}"/>
                 <MenuItem Header="Zamknij"
                           Command="{Binding ExitCommand}"
                           Style="{StaticResource TrayMenuItemStyle}"/>

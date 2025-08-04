@@ -45,14 +45,13 @@ namespace USofware_HUb.MVVM.ViewModel
 
         private void ShowMainWindow()
         {
-            var main = new MainWindow();
-            main.Show();
-            Animations.CloseWithAnimation(Application.Current.Windows[0]);
+            WindowManager.ShowSingleWindow(WindowManager.Windows.Main, true);
         }
 
         private void Shutdown()
         {
-            Animations.CloseWithAnimation(Application.Current.Windows[0]);
+            WindowManager.CloseWindow(WindowManager.Windows.Login, true);
+            //Animations.CloseWithAnimation(Application.Current.Windows[0]);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
