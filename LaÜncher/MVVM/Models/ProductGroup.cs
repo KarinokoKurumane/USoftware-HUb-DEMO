@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace USofware_HUb.MVVM.Models
+﻿namespace USoftware_HUb.MVVM.Models
 {
     class ProductGroup
     {

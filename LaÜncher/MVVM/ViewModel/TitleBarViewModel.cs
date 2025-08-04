@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-using USofware_HUb.MVVM.Utility;
+using USoftwareHUB.Utility;
 
-namespace USofware_HUb.MVVM.ViewModel
+namespace USoftware_HUb.MVVM.ViewModel
 {
     internal class TitleBarViewModel : INotifyPropertyChanged
     {
@@ -61,7 +56,7 @@ namespace USofware_HUb.MVVM.ViewModel
             var _userSettings = true; // true - minimalizuj do zasobnika, false - zamknij okno
             if (_userSettings)
             {
-                WindowBehaviour.MinimizeToTray();
+                WindowBehaviour.HideWindow();
             }
             else
             {

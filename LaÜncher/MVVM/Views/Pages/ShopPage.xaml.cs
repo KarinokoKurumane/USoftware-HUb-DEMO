@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace USoftware_HUb.MVVM.Views
+namespace USoftware_HUb.MVVM.Views.Pages
 {
     /// <summary>
-    /// Logika interakcji dla klasy ProductDetails.xaml
+    /// Logika interakcji dla klasy ShopPage.xaml
     /// </summary>
-    public partial class ProductDetails : UserControl
+    public partial class ShopPage : Page
     {
-        public ProductDetails()
+        public ShopPage()
         {
             InitializeComponent();
         }

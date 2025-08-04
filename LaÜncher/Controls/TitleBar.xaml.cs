@@ -1,12 +1,8 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using USofware_HUb.MVVM.Utility;
-using USofware_HUb.MVVM.ViewModel;
+using USoftwareHUB.Utility;
 
-namespace USofware_HUb.Controls
+namespace USoftware_HUb.Controls
 {
     /// <summary>
     /// Logika interakcji dla klasy TitleBar.xaml
@@ -27,7 +23,7 @@ namespace USofware_HUb.Controls
         private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
-                WindowBehaviour.GetParentWindow()?.DragMove();
+                WindowBehaviour.GetCurrentWindow()?.DragMove();
         }
 
     }

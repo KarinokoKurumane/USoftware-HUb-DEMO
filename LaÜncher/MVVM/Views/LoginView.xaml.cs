@@ -1,9 +1,9 @@
-﻿using USofware_HUb.MVVM.ViewModel;
+﻿using USoftware_HUb.MVVM.ViewModel;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace USofware_HUb.MVVM.Views
+namespace USoftware_HUb.MVVM.Views
 {
     /// <summary>
     /// Logika interakcji dla klasy LoginView.xaml

@@ -1,7 +1,7 @@
-﻿<UserControl x:Class="USofware_HUb.Controls.TitleBar"
+﻿<UserControl x:Class="USoftware_HUb.Controls.TitleBar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:viewModel="clr-namespace:USofware_HUb.MVVM.ViewModel"
+             xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel"
              Height="32"
              Background="#FF131313">
 

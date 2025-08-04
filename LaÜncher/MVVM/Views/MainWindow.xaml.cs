@@ -1,8 +1,8 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
 using System.Windows;
-using USofware_HUb.MVVM.ViewModel;
+using USoftware_HUb.MVVM.ViewModel;
 
-namespace USofware_HUb
+namespace USoftware_HUb
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

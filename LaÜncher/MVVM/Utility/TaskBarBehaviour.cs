@@ -1,9 +1,9 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
 using System.Drawing;
 using System.Windows;
-using USofware_HUb.MVVM.Models;
+using USoftware_HUb.MVVM.Models;
 
-namespace USofware_HUb.MVVM.Utility
+namespace USoftware_HUb.MVVM.Utility
 {
     internal static class TaskBarBehaviour
     {

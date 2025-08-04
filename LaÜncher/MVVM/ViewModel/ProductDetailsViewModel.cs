@@ -1,8 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using USofware_HUb.MVVM.Utility;
+using USoftwareHUB.Utility;
+using USoftware_HUb.MVVM.Utility;
 
-namespace USofware_HUb.MVVM.ViewModel
+namespace USoftware_HUb.MVVM.ViewModel
 {
     class ProductDetailsViewModel
     {
@@ -30,7 +31,7 @@ namespace USofware_HUb.MVVM.ViewModel
         {
             // TODO: Logika uruchamiania aplikacji
 
-            WindowBehaviour.MinimizeToTray();
+            WindowBehaviour.HideWindow();
             TaskBarBehaviour.ShowBalloonTip("Aplikacja uruchomiona", "HÜB został zminimalizowany do zasobnika.");
         }
 
@@ -38,7 +39,7 @@ namespace USofware_HUb.MVVM.ViewModel
         {
             // TODO: Logika uruchamiania aplikacji jako grupa
 
-            WindowBehaviour.MinimizeToTray();
+            WindowBehaviour.HideWindow();
             TaskBarBehaviour.ShowBalloonTip("Grupa aplikacji uruchomiona", "HÜB został zminimalizowany do zasobnika.");
         }
 

@@ -1,0 +1,15 @@
+﻿<Page x:Class="USoftware_HUb.MVVM.Views.Pages.ShopPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="clr-namespace:USoftware_HUb.MVVM.Views.Pages"
+      xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel.Pages"
+      Title="ShopPage">
+
+    <Page.DataContext>
+        <viewModel:ShopPageViewModel/>
+    </Page.DataContext>
+    
+    <Grid>
+        
+    </Grid>
+</Page>

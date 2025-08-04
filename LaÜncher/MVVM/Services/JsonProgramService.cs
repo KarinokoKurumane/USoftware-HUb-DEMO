@@ -1,8 +1,8 @@
-﻿using USofware_HUb.MVVM.Models;
+﻿using USoftware_HUb.MVVM.Models;
 using System.IO;
 using System.Text.Json;
 
-namespace USofware_HUb.MVVM.Services
+namespace USoftware_HUb.MVVM.Services
 {
     internal class JsonProgramService
     {

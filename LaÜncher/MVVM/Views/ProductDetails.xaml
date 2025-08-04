@@ -1,8 +1,8 @@
-﻿<UserControl x:Class="USofware_HUb.MVVM.Views.ProductDetails"
+﻿<UserControl x:Class="USoftware_HUb.MVVM.Views.ProductDetails"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-             xmlns:local="clr-namespace:USofware_HUb.MVVM.Views"
-             xmlns:viewModel="clr-namespace:USofware_HUb.MVVM.ViewModel">
+             xmlns:local="clr-namespace:USoftware_HUb.MVVM.Views"
+             xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel">
 
     <UserControl.DataContext>
         <viewModel:ProductDetailsViewModel/>

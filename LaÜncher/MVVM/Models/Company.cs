@@ -1,4 +1,4 @@
-﻿namespace USofware_HUb.MVVM.Models
+﻿namespace USoftware_HUb.MVVM.Models
 {
     /// <summary>
     /// Klasa reprezentująca firmę.
