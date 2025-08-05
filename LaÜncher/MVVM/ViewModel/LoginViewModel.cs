@@ -13,10 +13,10 @@ namespace USoftware_HUb.MVVM.ViewModel
 
         public LoginViewModel()
         {
-            LoginCommand = new RelayCommand(Login);
-            RegisterCommand = new RelayCommand(Register);
-            OfflineCommand = new RelayCommand(Offline);
-            QuitCommand = new RelayCommand(Shutdown);
+            LoginCommand = new RelayCommand(x => Login());
+            RegisterCommand = new RelayCommand(x => Register());
+            OfflineCommand = new RelayCommand(x => Offline());
+            QuitCommand = new RelayCommand(x => Shutdown());
         }
 
         private void Login()

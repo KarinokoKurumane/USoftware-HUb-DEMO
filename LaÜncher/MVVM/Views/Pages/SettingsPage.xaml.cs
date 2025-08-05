@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace USoftware_HUb.MVVM.Views.Pages
 {
     /// <summary>
-    /// Logika interakcji dla klasy ShopPage.xaml
+    /// Logika interakcji dla klasy SettingsPage.xaml
     /// </summary>
-    public partial class ShopPage : UserControl
+    public partial class SettingsPage : UserControl
     {
-        public ShopPage()
+        public SettingsPage()
         {
             InitializeComponent();
         }

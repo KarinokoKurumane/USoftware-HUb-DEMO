@@ -9,7 +9,12 @@ namespace USoftware_HUb.MVVM.ViewModel
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
+        public ICommand ShopCommand { get; }
+        public ICommand AppCommand { get; }
+        public ICommand GameCommand { get; }
+        public ICommand ProfileCommand { get; }
         public ICommand LoginCommand { get; }
+        public ICommand SettingsCommand { get; }
         public ICommand HelpCommand { get; }
         public ICommand MinimizeCommand { get; }
         public ICommand MaximizeCommand { get; }
@@ -19,16 +24,46 @@ namespace USoftware_HUb.MVVM.ViewModel
 
         public TitleBarViewModel()
         {
-            LoginCommand = new RelayCommand(Login);
-            HelpCommand = new RelayCommand(Help);
-            MinimizeCommand = new RelayCommand(Minimize);
-            MaximizeCommand = new RelayCommand(Maximize);
-            CloseCommand = new RelayCommand(Close);
+            //ShopCommand = new RelayCommand(Shop);
+            //AppCommand = new RelayCommand(Applications);
+            //GameCommand = new RelayCommand(Game);
+            //ProfileCommand = new RelayCommand(Profile);
+            //LoginCommand = new RelayCommand(Login);
+            //SettingsCommand = new RelayCommand(Settings);
+            //HelpCommand = new RelayCommand(Help);
+            //MinimizeCommand = new RelayCommand(Minimize);
+            //MaximizeCommand = new RelayCommand(Maximize);
+            //CloseCommand = new RelayCommand(Close);
+        }
+
+        private void Shop()
+        {
+            // TODO: Implementacja logiki sklepu
+        }
+
+        private void Applications()
+        {
+            // TODO: Implementacja logiki aplikacji
+        }
+
+        private void Game()
+        {
+            // TODO: Implementacja logiki gier
+        }
+
+        private void Profile()
+        {
+            // TODO: Implementacja logiki profilu
         }
 
         private void Login()
         {
             // TODO: Implementacja logiki logowania
+        }
+
+        private void Settings()
+        {
+            // TODO: Implementacja logiki ustawień
         }
 
         private void Help()

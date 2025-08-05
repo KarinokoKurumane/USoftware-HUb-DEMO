@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using USoftware_HUb.MVVM.ViewModel;
 
 namespace USoftware_HUb.Controls
 {
@@ -10,6 +11,7 @@ namespace USoftware_HUb.Controls
         public StatusBar()
         {
             InitializeComponent();
+            DataContext = MainViewModel.Instance;
         }
     }
 }

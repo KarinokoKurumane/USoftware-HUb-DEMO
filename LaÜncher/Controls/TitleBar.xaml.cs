@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
+using USoftware_HUb.MVVM.ViewModel;
 using USoftwareHUB.Utility;
 
 namespace USoftware_HUb.Controls
@@ -13,6 +14,7 @@ namespace USoftware_HUb.Controls
         public TitleBar()
         {
             InitializeComponent();
+            DataContext = MainViewModel.Instance;
         }
 
         /// <summary>

@@ -7,20 +7,23 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/TitleButtonBasic.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/TitleButtonExit.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/LoginButtonWide.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/MainButtonWide.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/MainAddButtonWide.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/ListBoxStyle.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/MainGreenButtonWide.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/MainAddGroupButtonWide.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/MainGroupButtonWide.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/MainRemoveGroupButtonWide.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/TrayMenuItemStyle.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/TrayMenuContextMenuStyle.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/TrayMenuLabelStyle.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/USoftwareUI;component/Themes/TrayMenuSeparatorStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/TitleButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/TitleButtonExitStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/TitleLabelButtonStyle.xaml"/>
+                
+                <ResourceDictionary Source="/Themes/LoginButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/MainButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/MainAddButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/ListBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/MainGreenButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/MainAddGroupButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/MainGroupButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/MainRemoveGroupButtonWide.xaml"/>
+                
+                <ResourceDictionary Source="/Themes/TrayMenuItemStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/TrayMenuContextMenuStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/TrayMenuLabelStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/TrayMenuSeparatorStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <!-- Tray i jego logika (wymaga poprawy wizualnej bo ssie) -->

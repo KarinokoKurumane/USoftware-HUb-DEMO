@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using USoftware_HUb.MVVM.ViewModel;
 
 namespace USoftware_HUb.MVVM.Views
 {
@@ -23,6 +24,7 @@ namespace USoftware_HUb.MVVM.Views
         public ProductDetails()
         {
             InitializeComponent();
+            DataContext = new ProductDetailsViewModel();
         }
     }
 }

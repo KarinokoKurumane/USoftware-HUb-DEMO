@@ -1,47 +1,139 @@
-﻿using System.ComponentModel;
+﻿using Hardcodet.Wpf.TaskbarNotification;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Navigation;
+using USoftware_HUb.MVVM.Models;
+using USoftware_HUb.MVVM.Utility;
+using USoftware_HUb.MVVM.ViewModel.Pages;
+using USoftware_HUb.MVVM.Views.Pages;
 using USoftwareHUB.Utility;
 
 namespace USoftware_HUb.MVVM.ViewModel
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : ObservableObject
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
+        private Window? GetParentWindow() => Window.GetWindow(Application.Current.Windows[0]);
 
-        private Page _currentPage;
-        public Page CurrentPage
+        private UserControl _currentPage = PageManager.Get(PageManager.Pages.PRODUCT)!;
+        public UserControl CurrentPage
         {
             get => _currentPage;
-            set { _currentPage = value; OnPropertyChanged(nameof(CurrentPage)); }
+            set
+            {
+                _currentPage = value;
+                OnPropertyChanged();
+            }
         }
 
-        //public ICommand ShowAppsCommand { get; }
-        //public ICommand ShowStoreCommand { get; }
-        //public ICommand ShowProfileCommand { get; }
-        //public ICommand ShowSettingsCommand { get; }
-        //public ICommand ShowHelpCommand { get; }
+        /* Titlebar Command */
+        public ICommand? ShopCommand { get; }
+        public ICommand? AppCommand { get; }
+        public ICommand? GameCommand { get; }
+        public ICommand? ProfileCommand { get; }
+        public ICommand? LoginCommand { get; }
+        public ICommand? SettingsCommand { get; }
+        public ICommand? HelpCommand { get; }
+        public ICommand? MinimizeCommand { get; }
+        public ICommand? MaximizeCommand { get; }
+        public ICommand? CloseCommand { get; }
 
-        public ICommand ShowMainCommand { get; }
-        public ICommand ShowSettingsPageCommand { get; }
-        public ICommand ShowLoginPageCommand { get; }
-        public ICommand ExitCommand { get; }
+        /* Tray Command */
+        public ICommand? ShowMainCommand { get; }
+        public ICommand? ShowSettingsPageCommand { get; }
+        public ICommand? ShowLoginPageCommand { get; }
+        public ICommand? ExitCommand { get; }
 
-        public MainViewModel()
+
+        private static MainViewModel? _instance;
+        public static MainViewModel Instance => _instance ??= new MainViewModel();
+
+        private MainViewModel()
         {
-            //ShowAppsCommand = new RelayCommand(PageManager.Pages.PRODUCT);
-            //ShowStoreCommand = new RelayCommand(PageManager.Pages.SHOP);
-            //ShowProfileCommand = new RelayCommand(PageManager.Pages.PROFILE);
-            //ShowSettingsCommand = new RelayCommand(PageManager.Pages.SETTINGS);
-            //ShowHelpCommand = new RelayCommand(PageManager.Pages.HELP);
+            ShopCommand = new RelayCommand(x => Shop());
+            AppCommand = new RelayCommand(x => Applications());
+            GameCommand = new RelayCommand(x => Game());
+            ProfileCommand = new RelayCommand(x => Profile());
+            LoginCommand = new RelayCommand(x => Login());
+            SettingsCommand = new RelayCommand(x => Settings());
+            HelpCommand = new RelayCommand(x => Help());
+            MinimizeCommand = new RelayCommand(x => Minimize());
+            MaximizeCommand = new RelayCommand(x => Maximize());
+            CloseCommand = new RelayCommand(x => Close());
 
-            _currentPage = PageManager.Get(PageManager.Pages.PRODUCT)!; // domyślna strona
+            ShowMainCommand = new RelayCommand(x => ShowMainWindow());
+            ShowSettingsPageCommand = new RelayCommand(x => ShowSettingsPage());
+            ShowLoginPageCommand = new RelayCommand(x => ShowLoginPage());
+            ExitCommand = new RelayCommand(x => Application.Current.Shutdown());
+        }
 
-            ShowMainCommand = new RelayCommand(ShowMainWindow);
-            ShowSettingsPageCommand = new RelayCommand(ShowSettingsPage);
-            ShowLoginPageCommand = new RelayCommand(ShowLoginPage);
-            ExitCommand = new RelayCommand(Application.Current.Shutdown);
+        private void Shop()
+        {
+            // TODO: Implementacja logiki sklepu
+            CurrentPage = PageManager.Get(PageManager.Pages.SHOP)!;
+        }
+
+        private void Applications()
+        {
+            // TODO: Implementacja logiki aplikacji
+            CurrentPage = PageManager.Get(PageManager.Pages.PRODUCT)!;
+        }
+
+        private void Game()
+        {
+            // TODO: Implementacja logiki gier
+            CurrentPage = PageManager.Get(PageManager.Pages.SHOP)!;
+        }
+
+        private void Profile()
+        {
+            // TODO: Implementacja logiki profilu
+            CurrentPage = PageManager.Get(PageManager.Pages.PROFILE)!;
+        }
+
+        private void Login()
+        {
+            // TODO: Implementacja logiki logowania
+        }
+
+        private void Settings()
+        {
+            // TODO: Implementacja logiki ustawień
+            CurrentPage = PageManager.Get(PageManager.Pages.SETTINGS)!;
+        }
+
+        private void Help()
+        {
+            // TODO: Implementacja logiki pomocy
+        }
+
+        private void Minimize()
+        {
+            GetParentWindow()!.WindowState = WindowState.Minimized;
+        }
+
+        private void Maximize()
+        {
+            var win = GetParentWindow();
+            if (win == null) return;
+
+            win.WindowState = win.WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
+            //(sender as Button)!.Content = win.WindowState == WindowState.Maximized ? "❐" : "⬜";
+        }
+
+        private void Close()
+        {
+            // TODO: zamknij okno z animacją lub minimalizuj do zasobnika systemowego w zależności od ustawień użytkownika
+            var _userSettings = true; // true - minimalizuj do zasobnika, false - zamknij okno
+            if (_userSettings)
+            {
+                WindowBehaviour.HideWindow();
+            }
+            else
+            {
+                Animations.CloseWithAnimation(GetParentWindow()!);
+            }
         }
 
         private void ShowSettingsPage()
@@ -58,7 +150,5 @@ namespace USoftware_HUb.MVVM.ViewModel
         /// Reakcja na kliknięcie przycisku "Otwórz HUB" w Tray'u.
         /// </summary>
         private void ShowMainWindow() => WindowBehaviour.ActivateWindow();
-
-        protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

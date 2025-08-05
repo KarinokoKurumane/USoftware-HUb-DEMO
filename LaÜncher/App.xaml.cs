@@ -1,7 +1,4 @@
-﻿using System.IO;
-using System.Reflection;
-using System.Windows;
-using USoftware_HUb.MVVM.ViewModel.Pages;
+﻿using System.Windows;
 using USoftware_HUb.MVVM.Views;
 using USoftware_HUb.MVVM.Views.Pages;
 using USoftwareHUB.Utility;
@@ -16,39 +13,26 @@ namespace USoftware_HUb
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            DllPath();
+
             RegisterWindows();
             RegisterPages();
 
             WindowManager.ShowSingleWindow(WindowManager.Windows.Login);
         }
 
-        private void DllPath()
-        {
-            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
-            {
-                string assemblyName = new AssemblyName(args.Name).Name + ".dll";
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data", assemblyName);
-
-                if (File.Exists(path))
-                {
-                    return Assembly.LoadFrom(path);
-                }
-
-                return null;
-            };
-        }
-
         private void RegisterWindows()
         {
-            WindowManager.RegisterWindow<MainWindow>(WindowManager.Windows.Main);
-            WindowManager.RegisterWindow<LoginView>(WindowManager.Windows.Login);
+            WindowManager.RegisterWindow(WindowManager.Windows.Main, () => new MainWindow());
+            WindowManager.RegisterWindow(WindowManager.Windows.Login, () => new LoginView());
         }
 
         private void RegisterPages()
         {
             PageManager.Register<ProductPage>(PageManager.Pages.PRODUCT);
             PageManager.Register<ShopPage>(PageManager.Pages.SHOP);
+            PageManager.Register<GamePage>(PageManager.Pages.PGAME);
+            PageManager.Register<ProfilePage>(PageManager.Pages.PROFILE);
+            PageManager.Register<SettingsPage>(PageManager.Pages.SETTINGS);
         }
 
         /// <summary>

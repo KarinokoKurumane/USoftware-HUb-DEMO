@@ -1,19 +1,15 @@
-﻿<Window x:Class="USoftware_HUb.MainWindow"
+﻿<Window x:Class="USoftware_HUb.MVVM.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:c="clr-namespace:USoftware_HUb.Controls"
         xmlns:local="clr-namespace:USoftware_HUb.MVVM.Views"
         xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel"
         Title="MainWindow" Height="650" Width="800" Background="#FF131313" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True">
-
-    <Window.DataContext>
-        <viewModel:MainViewModel/>
-    </Window.DataContext>
-
     <Grid>
 
         <c:TitleBar Height="32" VerticalAlignment="Top" />
-        
+
+        <!--<ContentControl Content="{Binding CurrentPage}" Margin="0,32,0,32"/>-->
         <Frame x:Name="MainFrame"
                NavigationUIVisibility="Hidden"
                Content="{Binding CurrentPage}"

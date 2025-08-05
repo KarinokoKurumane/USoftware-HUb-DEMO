@@ -4,9 +4,9 @@
              xmlns:local="clr-namespace:USoftware_HUb.MVVM.Views"
              xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel">
 
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <viewModel:ProductDetailsViewModel/>
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
 
     <Grid>
         <Grid.RowDefinitions>

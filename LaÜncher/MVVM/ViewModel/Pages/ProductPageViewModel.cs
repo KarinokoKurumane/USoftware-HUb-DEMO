@@ -3,11 +3,12 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 using USoftware_HUb.MVVM.Models;
+using USoftware_HUb.MVVM.Utility;
 using USoftwareHUB.Utility;
 
 namespace USoftware_HUb.MVVM.ViewModel.Pages
 {
-    class ProductPageViewModel : INotifyPropertyChanged
+    class ProductPageViewModel : ObservableObject
     {
         public ObservableCollection<ProductItem> DisplayItems { get; set; } = new();
 
@@ -35,9 +36,9 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
 
         public ProductPageViewModel()
         {
-            ShowProgramsCommand = new RelayCommand(LoadPrograms);
-            ShowGamesCommand = new RelayCommand(LoadGames);
-            AddProductCommand = new RelayCommand(AddProduct);
+            ShowProgramsCommand = new RelayCommand(x => LoadPrograms());
+            ShowGamesCommand = new RelayCommand(x => LoadGames());
+            AddProductCommand = new RelayCommand(x => AddProduct());
         }
 
         private void LoadPrograms()
@@ -76,8 +77,5 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
             };
             timer.Start();
         }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

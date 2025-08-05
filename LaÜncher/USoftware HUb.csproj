@@ -9,7 +9,6 @@
     <UseWindowsForms>False</UseWindowsForms>
     <AssemblyName>HUBCore</AssemblyName>
     <ApplicationIcon>LOGO_U.ico</ApplicationIcon>
-    <BaseOutputPath>Data\</BaseOutputPath>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
   </PropertyGroup>
 
@@ -36,6 +35,7 @@
 
   <ItemGroup>
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,10 +63,10 @@
 
   <ItemGroup>
     <Reference Include="USoftwareHUB">
-      <HintPath>..\..\USHUBUtility\USHUBUtility\bin\Debug\net9.0-windows\USoftwareHUB.dll</HintPath>
+      <HintPath>..\..\Biblioteki by ja\USoftwareHUB.dll</HintPath>
     </Reference>
     <Reference Include="USoftwareUI">
-      <HintPath>..\..\USoftwareUI\USoftwareUI\bin\Debug\net9.0-windows\USoftwareUI.dll</HintPath>
+      <HintPath>..\..\Biblioteki by ja\USoftwareUI.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -2,7 +2,7 @@
 using System.Windows;
 using USoftware_HUb.MVVM.ViewModel;
 
-namespace USoftware_HUb
+namespace USoftware_HUb.MVVM.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -12,6 +12,11 @@ namespace USoftware_HUb
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += (_, _) =>
+            {
+                DataContext = MainViewModel.Instance;
+                MessageBox.Show($"{MainFrame.Content}", "Laoadet");
+            };
         }
 
         protected override void OnInitialized(EventArgs e)
@@ -20,7 +25,7 @@ namespace USoftware_HUb
 
             // Ustawienie kontekstu danych dla ikony w zasobniku systemowym
             var trayIcon = (TaskbarIcon)FindResource("TrayIcon");
-            trayIcon.DataContext = new MainViewModel();
+            trayIcon.DataContext = MainViewModel.Instance;
         }
     }
 }

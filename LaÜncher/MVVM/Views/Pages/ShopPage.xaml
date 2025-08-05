@@ -1,15 +1,14 @@
-﻿<Page x:Class="USoftware_HUb.MVVM.Views.Pages.ShopPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:local="clr-namespace:USoftware_HUb.MVVM.Views.Pages"
-      xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel.Pages"
-      Title="ShopPage">
+﻿<UserControl x:Class="USoftware_HUb.MVVM.Views.Pages.ShopPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:USoftware_HUb.MVVM.Views.Pages"
+             xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel.Pages">
 
-    <Page.DataContext>
+    <UserControl.DataContext>
         <viewModel:ShopPageViewModel/>
-    </Page.DataContext>
+    </UserControl.DataContext>
     
     <Grid>
-        
+        <Label Content="Strona sklepu || WIP" Foreground="White" FontSize="30"/>
     </Grid>
-</Page>
+</UserControl>

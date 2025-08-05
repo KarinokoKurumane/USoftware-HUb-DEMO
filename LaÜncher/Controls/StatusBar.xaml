@@ -9,9 +9,9 @@
     <UserControl.Resources>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     </UserControl.Resources>
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <viewModel:MainViewModel/>
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
 
 
     <Border BorderThickness="1,0,0,0"

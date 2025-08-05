@@ -12,15 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using USoftware_HUb.MVVM.ViewModel.Pages;
 
 namespace USoftware_HUb.MVVM.Views.Pages
 {
     /// <summary>
-    /// Logika interakcji dla klasy ShopPage.xaml
+    /// Logika interakcji dla klasy GamePage.xaml
     /// </summary>
-    public partial class ShopPage : UserControl
+    public partial class GamePage : UserControl
     {
-        public ShopPage()
+        public GamePage()
         {
             InitializeComponent();
         }

@@ -5,7 +5,7 @@ using USoftware_HUb.MVVM.Utility;
 
 namespace USoftware_HUb.MVVM.ViewModel
 {
-    class ProductDetailsViewModel
+    public class ProductDetailsViewModel: ObservableObject
     {
         public ICommand RunAppCommand { get; }
 
@@ -20,10 +20,10 @@ namespace USoftware_HUb.MVVM.ViewModel
         public ProductDetailsViewModel()
         {
             // TODO: Inicjalizacja szczegółów produktu
-            RunAppCommand = new RelayCommand(RunApp);
-            RunAsGroupCommand = new RelayCommand(RunAsGroup);
-            AddToGroupCommand = new RelayCommand(AddToGroup);
-            RemoveFromGroupCommand = new RelayCommand(RemoveFromGroup);
+            RunAppCommand = new RelayCommand(x => RunApp());
+            RunAsGroupCommand = new RelayCommand(x => RunAsGroup());
+            AddToGroupCommand = new RelayCommand(x => AddToGroup());
+            RemoveFromGroupCommand = new RelayCommand(x => RemoveFromGroup());
         }
 
 
