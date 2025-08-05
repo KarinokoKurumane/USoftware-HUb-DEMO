@@ -10,6 +10,16 @@
     <AssemblyName>HUBCore</AssemblyName>
     <ApplicationIcon>LOGO_U.ico</ApplicationIcon>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+	<GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+	<NuGetAuditMode>all</NuGetAuditMode>
+	<NuGetAuditLevel>moderate</NuGetAuditLevel>
+	<Company>ÜSoftware</Company>
+	<Authors>Karinko Kürumane</Authors>
+	<Copyright>Copyright © ÜSoftware 2025</Copyright>
+	<Product>ÜSoftware HÜB</Product>
+	<PackageIcon>LOGO_U.png</PackageIcon>
+	<Version>1.0.0</Version>
+	<FileVersion></FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -62,12 +72,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="C:\Users\xblex\OneDrive\Obrazy\LOGO_U.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="USoftwareHUB">
-      <HintPath>..\..\Biblioteki by ja\USoftwareHUB.dll</HintPath>
+      <HintPath>..\..\USHUBUtility\USHUBUtility\bin\Debug\net9.0-windows\USoftwareHUB.dll</HintPath>
     </Reference>
-    <Reference Include="USoftwareUI">
-      <HintPath>..\..\Biblioteki by ja\USoftwareUI.dll</HintPath>
-    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

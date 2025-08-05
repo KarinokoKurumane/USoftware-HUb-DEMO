@@ -12,11 +12,7 @@ namespace USoftware_HUb.MVVM.Views
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += (_, _) =>
-            {
-                DataContext = MainViewModel.Instance;
-                MessageBox.Show($"{MainFrame.Content}", "Laoadet");
-            };
+            Loaded += (_, _) => DataContext = MainViewModel.Instance;
         }
 
         protected override void OnInitialized(EventArgs e)

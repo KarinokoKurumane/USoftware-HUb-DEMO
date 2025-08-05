@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
+using USoftware_HUb.MVVM.Utility;
 using USoftwareHUB.Utility;
 
 namespace USoftware_HUb.MVVM.ViewModel
 {
-    internal class LoginViewModel : INotifyPropertyChanged
+    internal class LoginViewModel : ObservableObject
     {
         public ICommand LoginCommand { get; }
         public ICommand RegisterCommand { get; }
@@ -31,10 +33,8 @@ namespace USoftware_HUb.MVVM.ViewModel
 
         private void Offline() => ShowMainWindow();
 
-        private void ShowMainWindow() => WindowManager.ShowSingleWindow(WindowManager.Windows.Main, true);
+        private void ShowMainWindow() => WindowManager.ShowSingleWindow(WindowManager.Windows.Main, false);
 
         private void Shutdown() => WindowManager.CloseWindow(WindowManager.Windows.Login, true);
-
-        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

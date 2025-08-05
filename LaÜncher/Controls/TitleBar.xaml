@@ -30,7 +30,6 @@
                     <ColumnDefinition MinWidth="70" Width="Auto"/>
                     <ColumnDefinition MinWidth="90" Width="Auto"/>
                     <ColumnDefinition MinWidth="60" Width="Auto"/>
-                    <ColumnDefinition MinWidth="70" Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <Image Source="/Assets/LOGO_U.png"
@@ -38,7 +37,7 @@
                        Width="32"
                        Height="32"
                        Margin="2,0,2,0"/>
-                
+
                 <TextBlock Text="HÜB"
                            Grid.Column="1"
                            Foreground="White"
@@ -49,8 +48,7 @@
                 <Button Grid.Column="3" Content="🛒SKLEP" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding ShopCommand}"/>
                 <Button Grid.Column="4" Content="📱APLIKACJE" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding AppCommand}"/>
                 <Button Grid.Column="5" Content="🎮GRY" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding GameCommand}"/>
-                <Button Grid.Column="6" Content="👤PROFIL" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding ProfileCommand}"/>
-            
+                
             </Grid>
 
             <Grid Grid.Column="1" HorizontalAlignment="Right">
@@ -69,7 +67,7 @@
 
                 <Rectangle Grid.Column="0" Height="32" Fill="#FF262626" VerticalAlignment="Center"/>
 
-                <Button Grid.Column="1" Content="🔒" Style="{StaticResource TitleButtonStyle}" Command="{Binding LoginCommand}" ToolTip="Zaloguj się"/>
+                <Button Grid.Column="1" Content="👤" Style="{StaticResource TitleButtonStyle}" Command="{Binding ProfileCommand}" ToolTip="Profil"/>
                 <Button Grid.Column="2" Content="🛠️" Style="{StaticResource TitleButtonStyle}" Command="{Binding SettingsCommand}" ToolTip="Ustawienia"/>
                 <Button Grid.Column="3" Content="❔" Style="{StaticResource TitleButtonStyle}" Command="{Binding HelpCommand}" ToolTip="Pomoc"/>
 

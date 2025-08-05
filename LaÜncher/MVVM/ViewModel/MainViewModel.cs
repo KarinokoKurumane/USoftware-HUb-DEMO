@@ -32,7 +32,6 @@ namespace USoftware_HUb.MVVM.ViewModel
         public ICommand? AppCommand { get; }
         public ICommand? GameCommand { get; }
         public ICommand? ProfileCommand { get; }
-        public ICommand? LoginCommand { get; }
         public ICommand? SettingsCommand { get; }
         public ICommand? HelpCommand { get; }
         public ICommand? MinimizeCommand { get; }
@@ -40,8 +39,6 @@ namespace USoftware_HUb.MVVM.ViewModel
         public ICommand? CloseCommand { get; }
 
         /* Tray Command */
-        public ICommand? ShowMainCommand { get; }
-        public ICommand? ShowSettingsPageCommand { get; }
         public ICommand? ShowLoginPageCommand { get; }
         public ICommand? ExitCommand { get; }
 
@@ -55,15 +52,12 @@ namespace USoftware_HUb.MVVM.ViewModel
             AppCommand = new RelayCommand(x => Applications());
             GameCommand = new RelayCommand(x => Game());
             ProfileCommand = new RelayCommand(x => Profile());
-            LoginCommand = new RelayCommand(x => Login());
             SettingsCommand = new RelayCommand(x => Settings());
             HelpCommand = new RelayCommand(x => Help());
             MinimizeCommand = new RelayCommand(x => Minimize());
             MaximizeCommand = new RelayCommand(x => Maximize());
             CloseCommand = new RelayCommand(x => Close());
 
-            ShowMainCommand = new RelayCommand(x => ShowMainWindow());
-            ShowSettingsPageCommand = new RelayCommand(x => ShowSettingsPage());
             ShowLoginPageCommand = new RelayCommand(x => ShowLoginPage());
             ExitCommand = new RelayCommand(x => Application.Current.Shutdown());
         }
@@ -71,41 +65,42 @@ namespace USoftware_HUb.MVVM.ViewModel
         private void Shop()
         {
             // TODO: Implementacja logiki sklepu
-            CurrentPage = PageManager.Get(PageManager.Pages.SHOP)!;
+            SetPage(PageManager.Get(PageManager.Pages.SHOP)!);
         }
 
         private void Applications()
         {
             // TODO: Implementacja logiki aplikacji
-            CurrentPage = PageManager.Get(PageManager.Pages.PRODUCT)!;
+            SetPage(PageManager.Get(PageManager.Pages.PRODUCT)!);
         }
 
         private void Game()
         {
             // TODO: Implementacja logiki gier
-            CurrentPage = PageManager.Get(PageManager.Pages.SHOP)!;
+            SetPage(PageManager.Get(PageManager.Pages.PGAME)!);
         }
 
         private void Profile()
         {
             // TODO: Implementacja logiki profilu
-            CurrentPage = PageManager.Get(PageManager.Pages.PROFILE)!;
-        }
-
-        private void Login()
-        {
-            // TODO: Implementacja logiki logowania
+            SetPage(PageManager.Get(PageManager.Pages.PROFILE)!);
         }
 
         private void Settings()
         {
             // TODO: Implementacja logiki ustawień
-            CurrentPage = PageManager.Get(PageManager.Pages.SETTINGS)!;
+            SetPage(PageManager.Get(PageManager.Pages.SETTINGS)!);
         }
 
         private void Help()
         {
             // TODO: Implementacja logiki pomocy
+            SetPage(PageManager.Get(PageManager.Pages.HELP)!);
+        }
+
+        private void ShowLoginPage()
+        {
+            // TODO: Logika otwierania okna logowania lub wylogowywania
         }
 
         private void Minimize()
@@ -136,19 +131,14 @@ namespace USoftware_HUb.MVVM.ViewModel
             }
         }
 
-        private void ShowSettingsPage()
-        {
-            // TODO: Logika otwierania strony z ustawieniami
-        }
-
-        private void ShowLoginPage()
-        {
-            // TODO: Logika otwierania okna logowania lub wylogowywania
-        }
-
         /// <summary>
-        /// Reakcja na kliknięcie przycisku "Otwórz HUB" w Tray'u.
+        /// Ustawia konkretną stronę jako wyświetlaną oraz aktywuje okno jeśli wymagane
         /// </summary>
-        private void ShowMainWindow() => WindowBehaviour.ActivateWindow();
+        /// <param name="page">Strona do wyświetlenia</param>
+        private void SetPage(UserControl page)
+        {
+            CurrentPage = page;
+            WindowBehaviour.ActivateWindow();
+        }
     }
 }

@@ -9,11 +9,7 @@
 
         <c:TitleBar Height="32" VerticalAlignment="Top" />
 
-        <!--<ContentControl Content="{Binding CurrentPage}" Margin="0,32,0,32"/>-->
-        <Frame x:Name="MainFrame"
-               NavigationUIVisibility="Hidden"
-               Content="{Binding CurrentPage}"
-               Margin="0,32,0,32"/>
+        <ContentControl Content="{Binding CurrentPage}" Margin="0,32,0,32"/>
 
         <c:StatusBar VerticalAlignment="Bottom"/>
 

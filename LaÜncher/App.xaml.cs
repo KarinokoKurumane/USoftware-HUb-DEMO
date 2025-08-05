@@ -33,6 +33,7 @@ namespace USoftware_HUb
             PageManager.Register<GamePage>(PageManager.Pages.PGAME);
             PageManager.Register<ProfilePage>(PageManager.Pages.PROFILE);
             PageManager.Register<SettingsPage>(PageManager.Pages.SETTINGS);
+            PageManager.Register<HelpPage>(PageManager.Pages.HELP);
         }
 
         /// <summary>

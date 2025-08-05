@@ -15,8 +15,6 @@ namespace USoftware_HUb.MVVM.Utility
 
         protected void OnPropertyChanged([CallerMemberName] string? name = default)
         {
-            MessageBox.Show($"Property changed: {name}");
-
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
