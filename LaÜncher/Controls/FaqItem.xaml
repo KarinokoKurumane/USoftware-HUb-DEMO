@@ -3,20 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:USoftware_HUb.Controls">
 
-    
-    <Border Background="#FF2A2A2A" CornerRadius="6" Padding="10" Margin="0,5">
-        <StackPanel>
-            <TextBlock Text="{Binding Question}" 
-                       FontWeight="Bold" 
-                       FontSize="16" 
-                       Foreground="White" 
+    <Expander Background="#FF2A2A2A"
+              Foreground="White"
+              Padding="10"
+              Margin="0,5"
+              ExpandDirection="Down"
+              IsExpanded="False"
+              FontFamily="Bahnschrift">
+        <Expander.Header>
+            <TextBlock Text="{Binding Question}"
+                       Margin="2,0"
+                       FontWeight="Bold"
+                       FontSize="16"
+                       Foreground="White"
                        TextWrapping="Wrap"/>
-            <TextBlock Text="{Binding Answer}" 
-                       FontSize="14" 
-                       Foreground="#FFCCCCCC" 
-                       Margin="0,5,0,0" 
-                       TextWrapping="Wrap"/>
-        </StackPanel>
-    </Border>
+        </Expander.Header>
+
+        <TextBlock Text="{Binding Answer}"
+                   FontSize="14"
+                   Foreground="#FFCCCCCC"
+                   TextWrapping="Wrap"
+                   Margin="0,5,0,0"/>
+    </Expander>
 
 </UserControl>

@@ -20,17 +20,21 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" VerticalAlignment="Center">
-                <TextBlock Text="Czym jest HÜB" FontSize="20" FontWeight="Bold" Foreground="White"/>
-                <TextBlock Text="Aplikacją." TextWrapping="Wrap" Margin="0,10,0,20" Foreground="White"/>
+                <TextBlock Text="O HÜB słów kilka" Style="{StaticResource HelpH1TextBlock}"/>
+                <TextBlock Text="HÜB to aplikacja." TextWrapping="Wrap" Margin="0,10,0,20" Foreground="White"/>
             </StackPanel>        
             
             <!-- Lista pytań -->
             <StackPanel Grid.Row="1" VerticalAlignment="Top">
-                <TextBlock Text="Masz pytania? Sprawdź, może już na opowiedzieliśmy:" Height="auto" Margin="0,0,0,15" FontSize="20" FontWeight="Bold" Foreground="White" TextWrapping="Wrap"/>
-                <c:FaqItem Question="Jak działa HUB?" Answer="Sprytnie."/>
-                <c:FaqItem Question="Czy mogę pracować offline?" Answer="Musisz."/>
-                <c:FaqItem Question="Gdzie zgłosić problem?" Answer="Jaki problem?"/>
-                <c:FaqItem Question="Lubisz placki?" Answer="Jeszcze jak."/>
+                <TextBlock Text="Masz pytania? Sprawdź, może są na nie odpowiedzi:" Style="{StaticResource HelpH1TextBlock}"/>
+                <c:FaqItem Question="Jak działa HUB?" 
+                           Answer="Sprytnie."/>
+                <c:FaqItem Question="Czy mogę pracować offline?" 
+                           Answer="Musisz."/>
+                <c:FaqItem Question="Gdzie zgłosić problem?" 
+                           Answer="Jaki problem?"/>
+                <c:FaqItem Question="Lubisz placki?" 
+                           Answer="Jeszcze jak."/>
             </StackPanel>
 
         </Grid>
@@ -43,49 +47,37 @@
             </Grid.RowDefinitions>
 
             <!-- Informacje o HUB -->
-            <StackPanel Grid.Row="0">
-                <Image Source="/Assets/LOGO_U.ico" Width="100" Height="100" />
-                <TextBlock Text="USoftwareHUB" FontSize="20" FontWeight="Bold" Foreground="White"/>
-                <TextBlock Text="Producent: Karinoko Software" Foreground="White"/>
-                <TextBlock Text="Wersja: 0.0.2.3 Alpha-01" Foreground="White"/>
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Assets/LOGO_U.ico" Width="120" Height="120" Margin="5"/>
+                <TextBlock Text="ÜSoftwareHÜB" Margin="0,0,0,10" FontSize="20" TextAlignment="Center" FontWeight="Bold" Foreground="White" FontFamily="Bahnschrift"/>
+                <TextBlock Text="Producent: Karinoko Software" TextAlignment="Center" Foreground="White" FontFamily="Bahnschrift"/>
+                <TextBlock Text="Wersja: 0.0.2.3 Alpha-01" TextAlignment="Center" Foreground="White" FontFamily="Consolas"/>
             </StackPanel>
 
             <!-- Dolna część -->
             <StackPanel Grid.Row="2" HorizontalAlignment="Center">
-                <TextBlock Text="KONTAKT / ZGŁOSZENIE PROBLEMU" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" FontFamily="Calibri"/>
+                <TextBlock Text="KONTAKT / ZGŁOSZENIE PROBLEMU" Style="{StaticResource HelpH1TextBlock}" TextAlignment="Center"/>
                 <Grid HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="32*"/>
                         <ColumnDefinition Width="34*"/>
-                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="32*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0"
-                            Command="{Binding GithubContactCommand}"
-                            Style="{StaticResource HelpLogoButton}">
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="/Assets/github_logo.png" Width="66" Height="66"/>
-                        </StackPanel>
-                    </Button>
+                    <c:ImageButton Grid.Column="0"
+                                   Command="{Binding GithubContactCommand}"
+                                   ImageSource="/Assets/github_logo.png"/>
 
-                    <Button Grid.Column="1"
-                            Command="{Binding GmailContactCommand}"
-                            Style="{StaticResource HelpLogoButton}">
-                        <StackPanel>
-                            <Image Source="/Assets/gmail_logo.png" Width="66" Height="66"/>
-                        </StackPanel>
-                    </Button>
+                    <c:ImageButton Grid.Column="1"
+                                   Command="{Binding GmailContactCommand}"
+                                   ImageSource="/Assets/gmail_logo.png"/>
 
-                    <Button Grid.Column="2"
-                            Command="{Binding DiscordContactCommand}"
-                            Style="{StaticResource HelpLogoButton}">
-                        <StackPanel>
-                            <Image Source="/Assets/discord_logo.png" Width="66" Height="66"/>
-                        </StackPanel>
-                    </Button>
+                    <c:ImageButton Grid.Column="2"
+                                   Command="{Binding DiscordContactCommand}"
+                                   ImageSource="/Assets/discord_logo.png"/>
                 </Grid>
                 
-                <Button Content="Wyślij opinię" Width="150" Margin="0,10,0,0" />
+                <Button Content="Wyślij opinię" Style="{StaticResource WideButtonStyle}" Width="150" Margin="0,10,0,0" />
             </StackPanel>
         </Grid>
     </Grid>

@@ -29,6 +29,7 @@
                 <ResourceDictionary Source="/Themes/TrayMenuSeparatorStyle.xaml"/>
 
                 <ResourceDictionary Source="/Themes/HelpLogoButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/HelpH1TextBlockStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <!-- Tray i jego logika (wymaga poprawy wizualnej bo ssie) -->
