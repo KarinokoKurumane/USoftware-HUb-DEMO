@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 using USoftware_HUb.MVVM.Utility;
+using USoftware_HUb.MVVM.ViewModel.Pages;
 using USoftwareHUB.Utility;
 
 namespace USoftware_HUb.MVVM.ViewModel
@@ -13,7 +14,9 @@ namespace USoftware_HUb.MVVM.ViewModel
         public ICommand OfflineCommand { get; }
         public ICommand QuitCommand { get; }
 
-        public LoginViewModel()
+        private static LoginViewModel? _instance;
+        public static LoginViewModel Instance => _instance ??= new LoginViewModel();
+        private LoginViewModel()
         {
             LoginCommand = new RelayCommand(x => Login());
             RegisterCommand = new RelayCommand(x => Register());

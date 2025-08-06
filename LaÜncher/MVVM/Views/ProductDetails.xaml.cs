@@ -24,7 +24,7 @@ namespace USoftware_HUb.MVVM.Views
         public ProductDetails()
         {
             InitializeComponent();
-            DataContext = new ProductDetailsViewModel();
+            DataContext = ProductDetailsViewModel.Instance;
         }
     }
 }

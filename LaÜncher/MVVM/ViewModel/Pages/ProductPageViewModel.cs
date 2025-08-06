@@ -33,8 +33,10 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
             set { _downloadProgress = value; OnPropertyChanged(nameof(DownloadProgress)); }
         }
 
+        private static ProductPageViewModel? _instance;
+        public static ProductPageViewModel Instance => _instance ??= new ProductPageViewModel();
 
-        public ProductPageViewModel()
+        private ProductPageViewModel()
         {
             ShowProgramsCommand = new RelayCommand(x => LoadPrograms());
             ShowGamesCommand = new RelayCommand(x => LoadGames());

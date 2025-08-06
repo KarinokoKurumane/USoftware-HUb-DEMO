@@ -15,9 +15,10 @@ namespace USoftware_HUb.MVVM.ViewModel
 
         public ICommand RemoveFromGroupCommand { get; }
 
+        private static ProductDetailsViewModel? _instance;
+        public static ProductDetailsViewModel Instance => _instance ??= new ProductDetailsViewModel();
 
-
-        public ProductDetailsViewModel()
+        private ProductDetailsViewModel()
         {
             // TODO: Inicjalizacja szczegółów produktu
             RunAppCommand = new RelayCommand(x => RunApp());
