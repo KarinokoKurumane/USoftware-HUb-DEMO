@@ -11,7 +11,10 @@
                 <ResourceDictionary Source="/Themes/TitleButtonExitStyle.xaml"/>
                 <ResourceDictionary Source="/Themes/TitleLabelButtonStyle.xaml"/>
 
+                <ResourceDictionary Source="/Themes/LoginWindowStyle.xaml"/>
                 <ResourceDictionary Source="/Themes/LoginButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/LoginBorderStyle.xaml"/>
+
                 <ResourceDictionary Source="/Themes/MainButtonWide.xaml"/>
                 <ResourceDictionary Source="/Themes/MainAddButtonWide.xaml"/>
                 <ResourceDictionary Source="/Themes/ListBoxStyle.xaml"/>
@@ -24,6 +27,8 @@
                 <ResourceDictionary Source="/Themes/TrayMenuContextMenuStyle.xaml"/>
                 <ResourceDictionary Source="/Themes/TrayMenuLabelStyle.xaml"/>
                 <ResourceDictionary Source="/Themes/TrayMenuSeparatorStyle.xaml"/>
+
+                <ResourceDictionary Source="/Themes/HelpLogoButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <!-- Tray i jego logika (wymaga poprawy wizualnej bo ssie) -->

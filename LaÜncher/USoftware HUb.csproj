@@ -20,6 +20,10 @@
 	<PackageIcon>LOGO_U.png</PackageIcon>
 	<Version>1.0.0</Version>
 	<FileVersion></FileVersion>
+	<RepositoryUrl>https://github.com/KarinokoKurumane/USoftware-HUb-DEMO</RepositoryUrl>
+	<PackageProjectUrl>https://karinokokurumane.github.io/USoftware-HUb-DEMO</PackageProjectUrl>
+	<PackageTags>C#;Gaming;Shop;Applications;WPF;</PackageTags>
+	<NeutralLanguage>pl-PL</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -31,7 +35,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\discord_logo.png" />
     <None Remove="Assets\factorio.png" />
+    <None Remove="Assets\github_logo.png" />
+    <None Remove="Assets\gmail_logo.png" />
     <None Remove="Assets\LOGO_U.ico" />
     <None Remove="Assets\LOGO_U.png" />
     <None Remove="Assets\nasterydachlogo.png" />
@@ -49,9 +56,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\discord_logo.png" />
     <Resource Include="Assets\factorio.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\github_logo.png" />
+    <Resource Include="Assets\gmail_logo.png" />
     <Resource Include="Assets\LOGO_U.ico" />
     <Resource Include="Assets\LOGO_U.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>

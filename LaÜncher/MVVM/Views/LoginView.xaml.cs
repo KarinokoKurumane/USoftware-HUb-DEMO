@@ -13,7 +13,7 @@ namespace USoftware_HUb.MVVM.Views
         public LoginView()
         {
             InitializeComponent();
-
+            DataContext = LoginViewModel.Instance;
         }
 
         /// <summary>

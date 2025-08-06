@@ -1,33 +1,44 @@
 ﻿<UserControl x:Class="USoftware_HUb.MVVM.Views.Pages.HelpPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="clr-namespace:USoftware_HUb.Controls"
              xmlns:local="clr-namespace:USoftware_HUb.MVVM.Views.Pages"
-             xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel.Pages"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel.Pages">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50*" />
-            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="18*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Lewa strona -->
-        <StackPanel Grid.Column="0" Margin="20" HorizontalAlignment="Right">
-            <TextBlock Text="Opis aplikacji" FontSize="20" FontWeight="Bold" Foreground="White"/>
-            <TextBlock Text="Lubie placki..." TextWrapping="Wrap" Margin="0,10,0,20" Foreground="White"/>
-            <TextBlock Text="FAQ" FontSize="18" FontWeight="SemiBold" Foreground="White"/>
-            <TextBlock Text="Czy lubisz placki?" FontSize="16" FontWeight="SemiBold" Foreground="White"/>
-            <TextBlock Text="Jeszcze jak." TextWrapping="Wrap" Margin="0,10,0,20" Foreground="White"/>
-            <!-- Lista pytań -->
-        </StackPanel>
+        <Grid Grid.Column="1" Margin="20" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="85*"/>
+            </Grid.RowDefinitions>
 
-        <!-- Prawa strona -->
-        <Grid Grid.Column="1" Margin="20" HorizontalAlignment="Left">
+            <StackPanel Grid.Row="0" VerticalAlignment="Center">
+                <TextBlock Text="Czym jest HÜB" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Text="Aplikacją." TextWrapping="Wrap" Margin="0,10,0,20" Foreground="White"/>
+            </StackPanel>        
+            
+            <!-- Lista pytań -->
+            <StackPanel Grid.Row="1" VerticalAlignment="Top">
+                <TextBlock Text="Masz pytania? Sprawdź, może już na opowiedzieliśmy:" Height="auto" Margin="0,0,0,15" FontSize="20" FontWeight="Bold" Foreground="White" TextWrapping="Wrap"/>
+                <c:FaqItem Question="Jak działa HUB?" Answer="Sprytnie."/>
+                <c:FaqItem Question="Czy mogę pracować offline?" Answer="Musisz."/>
+                <c:FaqItem Question="Gdzie zgłosić problem?" Answer="Jaki problem?"/>
+                <c:FaqItem Question="Lubisz placki?" Answer="Jeszcze jak."/>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Column="2" Margin="20" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
@@ -36,15 +47,44 @@
                 <Image Source="/Assets/LOGO_U.ico" Width="100" Height="100" />
                 <TextBlock Text="USoftwareHUB" FontSize="20" FontWeight="Bold" Foreground="White"/>
                 <TextBlock Text="Producent: Karinoko Software" Foreground="White"/>
-                <TextBlock Text="Wersja: 1.2.0" Foreground="White"/>
+                <TextBlock Text="Wersja: 0.0.2.3 Alpha-01" Foreground="White"/>
             </StackPanel>
 
             <!-- Dolna część -->
-            <StackPanel Grid.Row="1">
-                <TextBlock Text="Kontakt / Zgłoś problem" FontSize="18" FontWeight="SemiBold" Foreground="White"/>
-                <TextBlock Text="Email: support@karinoko.dev" Foreground="White"/>
-                <TextBlock Text="Github: support@karinoko.dev" Foreground="White"/>
-                <TextBlock Text="Discord: support@karinoko.dev" Foreground="White"/>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+                <TextBlock Text="KONTAKT / ZGŁOSZENIE PROBLEMU" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" FontFamily="Calibri"/>
+                <Grid HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="34*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            Command="{Binding GithubContactCommand}"
+                            Style="{StaticResource HelpLogoButton}">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="/Assets/github_logo.png" Width="66" Height="66"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Grid.Column="1"
+                            Command="{Binding GmailContactCommand}"
+                            Style="{StaticResource HelpLogoButton}">
+                        <StackPanel>
+                            <Image Source="/Assets/gmail_logo.png" Width="66" Height="66"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Grid.Column="2"
+                            Command="{Binding DiscordContactCommand}"
+                            Style="{StaticResource HelpLogoButton}">
+                        <StackPanel>
+                            <Image Source="/Assets/discord_logo.png" Width="66" Height="66"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+                
                 <Button Content="Wyślij opinię" Width="150" Margin="0,10,0,0" />
             </StackPanel>
         </Grid>

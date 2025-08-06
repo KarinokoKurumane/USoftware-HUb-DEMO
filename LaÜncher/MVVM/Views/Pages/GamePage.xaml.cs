@@ -24,6 +24,7 @@ namespace USoftware_HUb.MVVM.Views.Pages
         public GamePage()
         {
             InitializeComponent();
+            DataContext = GamePageViewModel.Instance;
         }
     }
 }
