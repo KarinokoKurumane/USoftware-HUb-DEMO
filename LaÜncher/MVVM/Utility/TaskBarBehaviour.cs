@@ -1,7 +1,7 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
 using System.Drawing;
 using System.Windows;
-using USoftware_HUb.MVVM.Models;
+using USoftwareHUB.Models;
 
 namespace USoftware_HUb.MVVM.Utility
 {

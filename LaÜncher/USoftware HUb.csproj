@@ -35,19 +35,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\assistance_banner.png" />
+    <None Remove="Assets\assistance_ico.png" />
     <None Remove="Assets\discord_logo.png" />
     <None Remove="Assets\factorio.png" />
     <None Remove="Assets\github_logo.png" />
     <None Remove="Assets\gmail_logo.png" />
     <None Remove="Assets\LOGO_U.ico" />
     <None Remove="Assets\LOGO_U.png" />
+    <None Remove="Assets\name_changer_banner.png" />
+    <None Remove="Assets\name_changer_ico.png" />
     <None Remove="Assets\nasterydachlogo.png" />
     <None Remove="Assets\satisfactory.png" />
     <None Remove="Assets\SmallLogo.png" />
+    <None Remove="Commisions\faq.json" />
+    <None Remove="ProductsData\apps.json" />
+    <None Remove="ProductsData\games.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\assistance_ico.png" />
+    <Resource Include="Assets\name_changer_banner.png" />
+    <Resource Include="Assets\name_changer_ico.png" />
+    <Content Include="Commisions\faq.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="LOGO_U.ico" />
+    <Content Include="ProductsData\apps.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ProductsData\games.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -56,6 +75,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\assistance_banner.png" />
     <Resource Include="Assets\discord_logo.png" />
     <Resource Include="Assets\factorio.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
@@ -75,10 +95,6 @@
     <Resource Include="Assets\SmallLogo.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="MVVM\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -108,5 +124,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MVVM\Interfaces\" />
+    <Folder Include="MVVM\Services\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>

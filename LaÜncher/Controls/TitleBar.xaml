@@ -5,10 +5,6 @@
              Height="32"
              Background="#FF131313">
 
-    <!--<UserControl.DataContext>
-        <viewModel:MainViewModel/>
-    </UserControl.DataContext>-->
-
     <Border Background="#FF131313"
             BorderBrush="#FF262626"
             BorderThickness="0,0,0,1"
@@ -47,7 +43,7 @@
 
                 <Button Grid.Column="3" Content="🛒SKLEP" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding ShopCommand}"/>
                 <Button Grid.Column="4" Content="📱APLIKACJE" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding AppCommand}"/>
-                <Button Grid.Column="5" Content="🎮GRY" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding GameCommand}"/>
+                <Button Grid.Column="5" Content="👤Profil" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding ProfileCommand}"/>
                 
             </Grid>
 
@@ -65,9 +61,9 @@
                     <ColumnDefinition Width="42"/>
                 </Grid.ColumnDefinitions>
 
-                <Rectangle Grid.Column="0" Height="32" Fill="#FF262626" VerticalAlignment="Center"/>
+                <Rectangle Grid.Column="1" Height="32" Fill="#FF262626" VerticalAlignment="Center"/>
 
-                <Button Grid.Column="1" Content="👤" Style="{StaticResource TitleButtonStyle}" Command="{Binding ProfileCommand}" ToolTip="Profil"/>
+                <!--<Button Grid.Column="1" Content="👤" Style="{StaticResource TitleButtonStyle}" Command="{Binding ProfileCommand}" ToolTip="Profil"/>-->
                 <Button Grid.Column="2" Content="🛠️" Style="{StaticResource TitleButtonStyle}" Command="{Binding SettingsCommand}" ToolTip="Ustawienia"/>
                 <Button Grid.Column="3" Content="❔" Style="{StaticResource TitleButtonStyle}" Command="{Binding HelpCommand}" ToolTip="Pomoc"/>
 

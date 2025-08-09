@@ -4,16 +4,11 @@
              xmlns:local="clr-namespace:USoftware_HUb.MVVM.Views"
              xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel">
 
-    <!--<UserControl.DataContext>
-        <viewModel:ProductDetailsViewModel/>
-    </UserControl.DataContext>-->
 
     <Grid>
         <Grid.RowDefinitions>
             <!-- Obrazek produktu -->
-            <RowDefinition Height="20*"/>
-            <!-- Pasek bazowy -->
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="25*"/>
             <!-- Pasek grupy -->
             <RowDefinition Height="40"/>
             <!-- Opis produktu -->
@@ -24,66 +19,79 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="0"
-               Source="/Assets/nasterydachlogo.png" Stretch="Fill" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+        <Grid Grid.Row="0">
+            <!-- Obrazek jako tło -->
+            <Grid.Background>
+                <ImageBrush ImageSource="{Binding BannerImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            Stretch="UniformToFill"/>
+            </Grid.Background>
 
-        <Grid Grid.Row="1" Background="#BF656565">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
+            <!-- Pasek działań -->
+            <Grid Background="#BF656565"
+                  Height="50"
+                  VerticalAlignment="Bottom"
+                  Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-            <Button Content="▶ Uruchom"
-                    Command="{Binding RunAppCommand}"
-                    Style="{StaticResource MainGreenWideButtonStyle}"
-                    Grid.Column="0"
-                    Margin="5,0,5,0"
-                    HorizontalAlignment="Left"/>
+                <Button Grid.Column="0"
+                        Content="▶ Uruchom"
+                        Command="{Binding RunAppCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        Style="{StaticResource MainGreenWideButtonStyle}"
+                        Margin="5,0,5,0"
+                        HorizontalAlignment="Left"/>
 
-            <Grid Grid.Column="1" VerticalAlignment="Center" MinWidth="100" Margin="5,0,5,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+                <!--Czas spędzony w aplikacji-->
+                <Grid Grid.Column="1" VerticalAlignment="Center" MinWidth="100" Margin="5,0,5,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                <TextBlock Text="Czas uruchomienia:"
-                           Grid.Row="0"
-                           VerticalAlignment="Center"
-                           Margin="5,0,5,0"
-                           FontSize="16"
-                           Foreground="White"/>
-                <TextBlock Text="24 Godziny"
-                            Grid.Row="1"
-                            VerticalAlignment="Center"
-                            Margin="5,0,5,0"
-                            FontSize="10"
-                            Foreground="White"/>
-            </Grid>
+                    <TextBlock Text="Czas uruchomienia:"
+                               Grid.Row="0"
+                               VerticalAlignment="Center"
+                               Margin="5,0,5,0"
+                               FontSize="16"
+                               Foreground="White"/>
+                    <TextBlock Text="24 Godziny"
+                               Grid.Row="1"
+                               VerticalAlignment="Center"
+                               Margin="5,0,5,0"
+                               FontSize="10"
+                               Foreground="White"/>
+                </Grid>
+                
+                <!--Ostatnie uruchomienie-->
+                <Grid Grid.Column="2" VerticalAlignment="Center" MinWidth="100" Margin="5,0,5,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-            <Grid Grid.Column="2" VerticalAlignment="Center" MinWidth="100" Margin="5,0,5,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-                <TextBlock Text="Ostatnie uruchomienie:"
-                           Grid.Row="0"
-                           VerticalAlignment="Center"
-                           Margin="5,0,5,0"
-                           FontSize="16"
-                           Foreground="White"/>
-                <TextBlock Text="12.09.1999"
-                           Grid.Row="1"
-                           VerticalAlignment="Center"
-                           Margin="5,0,5,0"
-                           FontSize="10"
-                           Foreground="White"/>
+                    <TextBlock Text="Ostatnie uruchomienie:"
+                               Grid.Row="0"
+                               VerticalAlignment="Center"
+                               Margin="5,0,5,0"
+                               FontSize="16"
+                               Foreground="White"/>
+                    <TextBlock Text="12.09.1999"
+                               Grid.Row="1"
+                               VerticalAlignment="Center"
+                               Margin="5,0,5,0"
+                               FontSize="10"
+                               Foreground="White"/>
+                </Grid>
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="2" Background="#FF1A1A1A" Margin="6,0,6,0" VerticalAlignment="Center">
+        
+
+        <Grid Grid.Row="1" Background="#FF1A1A1A" Margin="6,0,6,0" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="160"/>
                 <ColumnDefinition Width="160"/>
@@ -92,38 +100,38 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="▶ Uruchom jako grupa"
-                    Command="{Binding RunAsGroupCommand}"
+                    Command="{Binding RunAsGroupCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                     Style="{StaticResource MainGroupWideButtonStyle}"
                     Grid.Column="0"/>
             <Button Content="➕ Dodaj do grupy"
-                    Command="{Binding AddToGroupCommand}"
+                    Command="{Binding AddToGroupCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                     Style="{StaticResource MainAddGroupWideButtonStyle}"
                     Grid.Column="1"/>
             <Button Content="🗑️ Usuń z grupy"
-                    Command="{Binding RemoveFromGroupCommand}"
+                    Command="{Binding RemoveFromGroupCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                     Style="{StaticResource MainRemoveGroupWideButtonStyle}"
                     Grid.Column="2"/>
         </Grid>
         
-        <Grid Grid.Row="3" Background="#FF1A1A1A" Margin="12">
+        <Grid Grid.Row="2" Background="#FF1A1A1A" Margin="12">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image Source="/Assets/nasterydachlogo.png" Width="100" Height="100" Margin="10"/>
+            <Image Source="{Binding IconImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}" Width="100" Height="100" Margin="10"/>
             <StackPanel Grid.Column="1" Margin="10">
-                <TextBlock Text="Nastery Dach"
+                <TextBlock Text="{Binding ProductName, RelativeSource={RelativeSource AncestorType=UserControl}}"
                            FontSize="24"
                            FontWeight="Bold"
                            Foreground="White"/>
-                <TextBlock Text="Opis produktu: To jest przykładowy opis produktu, który może być dłuższy i zawierać więcej informacji."
+                <TextBlock Text="{Binding ProductDescription, RelativeSource={RelativeSource AncestorType=UserControl}}"
                            FontSize="14"
                            Foreground="White"
                            TextWrapping="Wrap"/>
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="4" Background="#FF1A1A1A" Margin="12">
+        <Grid Grid.Row="3" Background="#FF1A1A1A" Margin="12">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="33*"/>
                 <ColumnDefinition Width="34*"/>
@@ -164,7 +172,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="5" Background="#FF1A1A1A" Margin="12">
+        <Grid Grid.Row="4" Background="#FF1A1A1A" Margin="12">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="50*"/>

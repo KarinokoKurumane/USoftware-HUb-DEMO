@@ -1,13 +1,8 @@
-﻿using Hardcodet.Wpf.TaskbarNotification;
-using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Navigation;
-using USoftware_HUb.MVVM.Models;
-using USoftware_HUb.MVVM.Utility;
-using USoftware_HUb.MVVM.ViewModel.Pages;
-using USoftware_HUb.MVVM.Views.Pages;
+using USoftwareHUB.Models;
+using USoftwareHUB.Services;
 using USoftwareHUB.Utility;
 
 namespace USoftware_HUb.MVVM.ViewModel
@@ -15,6 +10,8 @@ namespace USoftware_HUb.MVVM.ViewModel
     public class MainViewModel : ObservableObject
     {
         private Window? GetParentWindow() => Window.GetWindow(Application.Current.Windows[0]);
+
+        private WindowState currentState = WindowState.Normal;
 
         private UserControl _currentPage = PageManager.Get(PageManager.Pages.PRODUCT)!;
         public UserControl CurrentPage
@@ -30,7 +27,6 @@ namespace USoftware_HUb.MVVM.ViewModel
         /* Titlebar Command */
         public ICommand? ShopCommand { get; }
         public ICommand? AppCommand { get; }
-        public ICommand? GameCommand { get; }
         public ICommand? ProfileCommand { get; }
         public ICommand? SettingsCommand { get; }
         public ICommand? HelpCommand { get; }
@@ -42,6 +38,23 @@ namespace USoftware_HUb.MVVM.ViewModel
         public ICommand? ShowLoginPageCommand { get; }
         public ICommand? ExitCommand { get; }
 
+        /* Statusbar Command */
+        public ICommand AddProductCommand { get; }
+
+        private bool _isDownloading;
+        public bool IsDownloading
+        {
+            get => _isDownloading;
+            set { _isDownloading = value; OnPropertyChanged(nameof(IsDownloading)); }
+        }
+
+        private double _downloadProgress;
+        public double DownloadProgress
+        {
+            get => _downloadProgress;
+            set { _downloadProgress = value; OnPropertyChanged(nameof(DownloadProgress)); }
+        }
+
 
         private static MainViewModel? _instance;
         public static MainViewModel Instance => _instance ??= new MainViewModel();
@@ -50,16 +63,22 @@ namespace USoftware_HUb.MVVM.ViewModel
         {
             ShopCommand = new RelayCommand(x => Shop());
             AppCommand = new RelayCommand(x => Applications());
-            GameCommand = new RelayCommand(x => Game());
+            
             ProfileCommand = new RelayCommand(x => Profile());
             SettingsCommand = new RelayCommand(x => Settings());
             HelpCommand = new RelayCommand(x => Help());
             MinimizeCommand = new RelayCommand(x => Minimize());
             MaximizeCommand = new RelayCommand(x => Maximize());
             CloseCommand = new RelayCommand(x => Close());
+            AddProductCommand = new RelayCommand(x => AddProduct());
 
             ShowLoginPageCommand = new RelayCommand(x => ShowLoginPage());
             ExitCommand = new RelayCommand(x => Application.Current.Shutdown());
+        }
+
+        private void AddProduct()
+        {
+            // TODO: Implementacja logiki dodawania produktów
         }
 
         private void Shop()
@@ -72,12 +91,6 @@ namespace USoftware_HUb.MVVM.ViewModel
         {
             // TODO: Implementacja logiki aplikacji
             SetPage(PageManager.Get(PageManager.Pages.PRODUCT)!);
-        }
-
-        private void Game()
-        {
-            // TODO: Implementacja logiki gier
-            SetPage(PageManager.Get(PageManager.Pages.PGAME)!);
         }
 
         private void Profile()
@@ -114,6 +127,7 @@ namespace USoftware_HUb.MVVM.ViewModel
             if (win == null) return;
 
             win.WindowState = win.WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
+            currentState = win.WindowState;
             //(sender as Button)!.Content = win.WindowState == WindowState.Maximized ? "❐" : "⬜";
         }
 
@@ -138,6 +152,10 @@ namespace USoftware_HUb.MVVM.ViewModel
         private void SetPage(UserControl page)
         {
             CurrentPage = page;
+
+            ServiceLocator.TryGet<LoggerService>(out var loggerService);
+            loggerService!.Log($"Change page: {PageManager.GetKey(page)}", LogTagType.INFO);
+
             WindowBehaviour.ActivateWindow();
         }
     }

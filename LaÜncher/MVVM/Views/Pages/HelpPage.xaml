@@ -20,23 +20,34 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" VerticalAlignment="Center">
-                <TextBlock Text="O HÜB słów kilka" Style="{StaticResource HelpH1TextBlock}"/>
-                <TextBlock Text="HÜB to aplikacja." TextWrapping="Wrap" Margin="0,10,0,20" Foreground="White"/>
+                <TextBlock Text="O HÜB SŁÓW KILKA" Style="{StaticResource HelpH1TextBlock}"/>
+                <TextBlock Text="HÜB to aplikacja. A aplikacja jak aplikacja, jaka jest każdy widzi." TextWrapping="Wrap" Margin="0,10,0,20" Foreground="White"/>
             </StackPanel>        
             
             <!-- Lista pytań -->
-            <StackPanel Grid.Row="1" VerticalAlignment="Top">
-                <TextBlock Text="Masz pytania? Sprawdź, może są na nie odpowiedzi:" Style="{StaticResource HelpH1TextBlock}"/>
-                <c:FaqItem Question="Jak działa HUB?" 
-                           Answer="Sprytnie."/>
-                <c:FaqItem Question="Czy mogę pracować offline?" 
-                           Answer="Musisz."/>
-                <c:FaqItem Question="Gdzie zgłosić problem?" 
-                           Answer="Jaki problem?"/>
-                <c:FaqItem Question="Lubisz placki?" 
-                           Answer="Jeszcze jak."/>
-            </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
+                <TextBlock Grid.Row="0"
+                           Text="MASZ PYTANIA? SPRAWDŹ, MOŻE SĄ NA NIE ODPOWIEDZI:"
+                           Style="{StaticResource HelpH1TextBlock}"
+                           Margin="0,0,0,10"/>
+
+                <ScrollViewer Grid.Row="1"
+                              VerticalScrollBarVisibility="Hidden"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <ItemsControl ItemsSource="{Binding FaqList}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <c:FaqItem Question="{Binding Question}" Answer="{Binding Answer}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
         </Grid>
 
         <Grid Grid.Column="2" Margin="20" HorizontalAlignment="Center">

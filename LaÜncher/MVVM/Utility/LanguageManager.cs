@@ -1,11 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace USoftware_HUb.MVVM.Utility
@@ -23,7 +17,7 @@ namespace USoftware_HUb.MVVM.Utility
 
             if (!File.Exists(filePath))
             {
-                MessageBox.Show($"Error - no existing file", $"Load language error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"ERROR - no existing file", $"Load language error!", MessageBoxButton.OK, MessageBoxImage.Error);
                 Translations = [];
                 return;
             }
@@ -36,7 +30,7 @@ namespace USoftware_HUb.MVVM.Utility
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error {ex.Message}", $"Load language error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"ERROR {ex.Message}", $"Load language error!", MessageBoxButton.OK, MessageBoxImage.Error);
                 Translations = [];
             }
         }

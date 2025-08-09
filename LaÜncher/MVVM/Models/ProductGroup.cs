@@ -1,4 +1,6 @@
-﻿namespace USoftware_HUb.MVVM.Models
+﻿using USoftwareHUB.Models;
+
+namespace USoftware_HUb.MVVM.Models
 {
     class ProductGroup
     {

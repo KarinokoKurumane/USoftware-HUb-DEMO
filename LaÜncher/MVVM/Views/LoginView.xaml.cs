@@ -1,7 +1,9 @@
-﻿using USoftware_HUb.MVVM.ViewModel;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using USoftware_HUb.MVVM.ViewModel;
+using USoftwareHUB.Models;
+using USoftwareHUB.Services;
 
 namespace USoftware_HUb.MVVM.Views
 {
@@ -13,6 +15,10 @@ namespace USoftware_HUb.MVVM.Views
         public LoginView()
         {
             InitializeComponent();
+
+            ServiceLocator.TryGet<LoggerService>(out var loggerService);
+            loggerService!.Log("Initialize Component Done", LogTagType.INFO, "LoginView .ctor");
+
             DataContext = LoginViewModel.Instance;
         }
 

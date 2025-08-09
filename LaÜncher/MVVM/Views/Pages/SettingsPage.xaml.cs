@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
 using USoftware_HUb.MVVM.ViewModel.Pages;
+using USoftwareHUB.Models;
+using USoftwareHUB.Services;
 
 namespace USoftware_HUb.MVVM.Views.Pages
 {
@@ -24,6 +13,10 @@ namespace USoftware_HUb.MVVM.Views.Pages
         public SettingsPage()
         {
             InitializeComponent();
+
+            ServiceLocator.TryGet<LoggerService>(out var loggerService);
+            loggerService!.Log("Initialize Component Done", LogTagType.INFO, "SettingsPage .ctor");
+
             DataContext = SettingsPageViewModel.Instance;
         }
     }

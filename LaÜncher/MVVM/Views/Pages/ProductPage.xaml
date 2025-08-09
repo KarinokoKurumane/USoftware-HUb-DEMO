@@ -4,14 +4,10 @@
              xmlns:local="clr-namespace:USoftware_HUb.MVVM.Views"
              xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel.Pages">
 
-    <!--<UserControl.DataContext>
-        <viewModel:ProductPageViewModel/>
-    </UserControl.DataContext>-->
-    
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
@@ -26,7 +22,12 @@
                     <Button Content="Gry" Command="{Binding ShowGamesCommand}" Style="{StaticResource MainWideButtonStyle}" Margin="0,5"/>
                 </StackPanel>
 
-                <ListBox Grid.Row="1" ItemsSource="{Binding DisplayItems}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" BorderThickness="0" Background="#FF1A1A1A">
+                <ListBox Grid.Row="1"
+                         ItemsSource="{Binding DisplayItems}"
+                         SelectedItem="{Binding SelectedProduct}"
+                         ItemContainerStyle="{StaticResource ListBoxItemStyle}"
+                         BorderThickness="0"
+                         Background="#FF1A1A1A">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Margin="5">
@@ -38,7 +39,16 @@
                 </ListBox>
 
             </Grid>
-            <local:ProductDetails Grid.Column="1"/>
+
+            <local:ProductDetails Grid.Column="1"
+                                  RunAppCommand="{Binding RunAppCommand}"
+                                  RunAsGroupCommand="{Binding RunAsGroupCommand}"
+                                  AddToGroupCommand="{Binding AddToGroupCommand}"
+                                  RemoveFromGroupCommand="{Binding RemoveFromGroupCommand}"
+                                  ProductName="{Binding SelectedProduct.Name}"
+                                  ProductDescription="{Binding SelectedProduct.Description}"
+                                  BannerImageSource="{Binding SelectedProduct.BannerPath}"
+                                  IconImageSource="{Binding SelectedProduct.IconPath}"/>
         </Grid>
     </Grid>
 </UserControl>

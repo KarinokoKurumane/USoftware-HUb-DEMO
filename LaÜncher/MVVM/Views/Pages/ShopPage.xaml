@@ -3,10 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:USoftware_HUb.MVVM.Views.Pages"
              xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel.Pages">
-
-    <UserControl.DataContext>
-        <viewModel:ShopPageViewModel/>
-    </UserControl.DataContext>
     
     <Grid>
         <Label Content="Strona sklepu || WIP" Foreground="White" FontSize="30"/>

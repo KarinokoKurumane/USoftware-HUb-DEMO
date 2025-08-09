@@ -30,6 +30,9 @@
 
                 <ResourceDictionary Source="/Themes/HelpLogoButtonStyle.xaml"/>
                 <ResourceDictionary Source="/Themes/HelpH1TextBlockStyle.xaml"/>
+
+                <ResourceDictionary Source="/Themes/DashboardLogStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/TagButtonLogStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <!-- Tray i jego logika (wymaga poprawy wizualnej bo ssie) -->
@@ -43,9 +46,6 @@
                           Style="{StaticResource TrayMenuItemStyle}"/>
                 <MenuItem Header="Aplikacje"
                           Command="{Binding AppCommand}"
-                          Style="{StaticResource TrayMenuItemStyle}"/>
-                <MenuItem Header="Gry"
-                          Command="{Binding GameCommand}"
                           Style="{StaticResource TrayMenuItemStyle}"/>
                 <Separator Style="{StaticResource TrayMenuSeparatorStyle}"/>
                 <MenuItem Header="Profil"

@@ -8,10 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <UserControl.DataContext>
-        <viewModel:ProfilePagesViewModel/>
-    </UserControl.DataContext>
-    
     <Grid>
         <Label Content="Strona profilu użytkownika || WIP" Foreground="White" FontSize="30"/>
     </Grid>

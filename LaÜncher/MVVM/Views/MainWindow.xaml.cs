@@ -1,6 +1,8 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
 using System.Windows;
 using USoftware_HUb.MVVM.ViewModel;
+using USoftwareHUB.Models;
+using USoftwareHUB.Services;
 
 namespace USoftware_HUb.MVVM.Views
 {
@@ -11,7 +13,11 @@ namespace USoftware_HUb.MVVM.Views
     {
         public MainWindow()
         {
+            ServiceLocator.TryGet<LoggerService>(out var loggerService);
+            loggerService!.Log("Initialize Component", LogTagType.INFO, "MainWindow .ctor");
+            
             InitializeComponent();
+
             Loaded += (_, _) => DataContext = MainViewModel.Instance;
         }
 

@@ -5,13 +5,10 @@
              xmlns:converters="clr-namespace:USoftwareHUB.Converters;assembly=USoftwareHUB"
              xmlns:viewModel="clr-namespace:USoftware_HUb.MVVM.ViewModel"
              Height="32" Background="#FF1A1A1A">
-    
+
     <UserControl.Resources>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     </UserControl.Resources>
-    <!--<UserControl.DataContext>
-        <viewModel:MainViewModel/>
-    </UserControl.DataContext>-->
 
 
     <Border BorderThickness="1,0,0,0"
@@ -22,12 +19,41 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Przycisk dodania produktu -->
-            <Button Grid.Column="0"
-                    Content="➕ Dodaj produkt"
-                    Command="{Binding AddProductCommand}"
-                    Style="{StaticResource AddButtonStyle}"
-                    Margin="10,0" Height="24" VerticalAlignment="Center"/>
+            <Grid Grid.Column="0">
+                <!-- Popup z opcjami -->
+                <Popup x:Name="AddOptionsPopup"
+                       Placement="Top"
+                       PlacementTarget="{Binding ElementName=AddProductButton}"
+                       StaysOpen="False"
+                       AllowsTransparency="True"
+                       PopupAnimation="Slide">
+                    <Border Background="#FF2A2A2A" CornerRadius="4" Padding="6">
+                        <StackPanel>
+                            <Button Content="📱Dodaj aplikację"
+                                    Command="{Binding AddProductCommand}"
+                                    CommandParameter="app"
+                                    Style="{StaticResource AddButtonStyle}"
+                                    Margin="2"/>
+                            <Button Content="🎮Dodaj grę"
+                                    Command="{Binding AddProductCommand}"
+                                    CommandParameter="game"
+                                    Style="{StaticResource AddButtonStyle}"
+                                    Margin="2"/>
+                        </StackPanel>
+                    </Border>
+                </Popup>
+
+                <!-- Przycisk dodania produktu -->
+                <Button x:Name="AddProductButton"
+                        Grid.Column="0"
+                        Content="➕ Dodaj produkt"
+                        Style="{StaticResource AddButtonStyle}"
+                        Margin="10,0"
+                        Height="24"
+                        VerticalAlignment="Center"
+                        Click="AddProductButton_Click"/>
+            </Grid>
+
 
             <!-- Pasek postępu -->
             <ProgressBar Grid.Column="1"
