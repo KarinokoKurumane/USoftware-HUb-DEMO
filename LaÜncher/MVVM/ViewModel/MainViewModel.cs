@@ -1,6 +1,9 @@
-﻿using System.Windows;
+﻿using System.Data.Common;
+using System.Reflection.Metadata;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using USoftware_HUb.MVVM.Views;
 using USoftwareHUB.Models;
 using USoftwareHUB.Services;
 using USoftwareHUB.Utility;
@@ -70,15 +73,18 @@ namespace USoftware_HUb.MVVM.ViewModel
             MinimizeCommand = new RelayCommand(x => Minimize());
             MaximizeCommand = new RelayCommand(x => Maximize());
             CloseCommand = new RelayCommand(x => Close());
-            AddProductCommand = new RelayCommand(x => AddProduct());
+            AddProductCommand = new RelayCommand(AddProduct);
 
             ShowLoginPageCommand = new RelayCommand(x => ShowLoginPage());
             ExitCommand = new RelayCommand(x => Application.Current.Shutdown());
         }
 
-        private void AddProduct()
+        private void AddProduct(object parameter)
         {
-            // TODO: Implementacja logiki dodawania produktów
+            if (parameter is not string productType)
+                return;
+
+            WindowManager.ShowMultiWindow(WindowManager.Windows.AddProduct, productType);
         }
 
         private void Shop()

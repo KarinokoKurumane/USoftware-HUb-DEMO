@@ -64,6 +64,13 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
             set { _downloadProgress = value; OnPropertyChanged(); }
         }
 
+        private string _executionPath = string.Empty;
+        public string ExecutionPath
+        {
+            get => _executionPath;
+            set { _executionPath = value; OnPropertyChanged(); }
+        }
+
         private ProductItem? _selectedProduct;
         public ProductItem? SelectedProduct
         {
@@ -79,6 +86,7 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
                 {
                     ProductName = value.Name;
                     ProductDesryption = value.Description;
+                    ExecutionPath = value.ExecutionPath;
                     BannerPath = value.BannerPath;
                     LogoPath = value.IconPath;
                 }
@@ -93,6 +101,8 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
 
         private ProductPageViewModel()
         {
+            Messenger.ProductAdded += OnProductAdded;
+
             LoadData();
 
             RunAppCommand = new RelayCommand(x => RunApp());
@@ -105,15 +115,62 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
             AddProductCommand = new RelayCommand(x => AddProduct());
         }
 
+        private void OnProductAdded(string type)
+        {
+            LoadData();
+            if (type == "app")
+                ShowPrograms();
+            else
+                ShowGames();
+        }
+
         private void RunApp()
         {
-            // TODO: Logika uruchamiania aplikacji
             if (_selectedProduct is null)
+            {
+                MessageBox.Show("Nie wybrano produktu.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
+            }
 
-            WindowBehaviour.HideWindow();
-            TaskBarBehaviour.ShowBalloonTip($"Aplikacja {_selectedProduct.Name} uruchomiona", "HÜB został zminimalizowany do zasobnika.");
+            string path = _selectedProduct.ExecutionPath;
+
+            if (!File.Exists(path))
+            {
+                MessageBox.Show($"Plik nie istnieje:\n{path}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            try
+            {
+                // Uruchomienie aplikacji, jeśli to możliwe wyizoluj to
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = path,
+                    UseShellExecute = true // pozwala na uruchamianie skrótów, plików .exe, itd.
+                });
+
+                // Ukrycie okna i powiadomienie
+                WindowBehaviour.HideWindow();
+                TaskBarBehaviour.ShowBalloonTip($"Aplikacja {_selectedProduct.Name} uruchomiona", "HÜB został zminimalizowany do zasobnika.");
+
+                // Logowanie, nowe, niby lepsze, w razie czego zmień na stary styl
+                if (ServiceLocator.TryGet<LoggerService>(out var logger))
+                {
+                    logger!.Log($"Uruchomiono produkt: {_selectedProduct.Name}", LogTagType.SUCCESS);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Nie udało się uruchomić aplikacji:\n{ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                if (ServiceLocator.TryGet<LoggerService>(out var logger))
+                {
+                    logger!.LogException(ex);
+                }
+            }
         }
+
+
 
         private void RunAsGroup()
         {

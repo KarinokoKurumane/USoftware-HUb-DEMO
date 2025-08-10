@@ -42,18 +42,19 @@ namespace USoftware_HUb
         private void RegisterWindows()
         {
             ServiceLocator.TryGet<LoggerService>(out var loggerService);
-            
+
             loggerService!.Log($"Window {WindowManager.Windows.Main} registration has started", LogTagType.INFO);
-            WindowManager.RegisterWindow(WindowManager.Windows.Main, () => new MainWindow());
+            WindowManager.RegisterWindow(WindowManager.Windows.Main, typeof(MainWindow), _ => new MainWindow());
 
             loggerService!.Log($"Window {WindowManager.Windows.Login} registration has started", LogTagType.INFO);
-            WindowManager.RegisterWindow(WindowManager.Windows.Login, () => new LoginView());
+            WindowManager.RegisterWindow(WindowManager.Windows.Login, typeof(LoginView), _ => new LoginView());
 
-            loggerService!.Log($"Window AddProduct registration has started", LogTagType.INFO);
-            WindowManager.RegisterWindow("AddProduct", () => new AddProductView());
+            loggerService!.Log($"Window {WindowManager.Windows.AddProduct} registration has started", LogTagType.INFO);
+            WindowManager.RegisterWindow(WindowManager.Windows.AddProduct, typeof(AddProductView), param => new AddProductView(param as string ?? "app"));
 
             loggerService!.Log("Windows registration completed", LogTagType.INFO);
         }
+
 
         private void RegisterPages()
         {
