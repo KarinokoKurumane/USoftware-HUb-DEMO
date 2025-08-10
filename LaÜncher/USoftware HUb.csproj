@@ -35,64 +35,33 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\assistance_banner.png" />
-    <None Remove="Assets\assistance_ico.png" />
     <None Remove="Assets\discord_logo.png" />
-    <None Remove="Assets\factorio.png" />
     <None Remove="Assets\github_logo.png" />
     <None Remove="Assets\gmail_logo.png" />
     <None Remove="Assets\LOGO_U.ico" />
     <None Remove="Assets\LOGO_U.png" />
-    <None Remove="Assets\name_changer_banner.png" />
-    <None Remove="Assets\name_changer_ico.png" />
-    <None Remove="Assets\nasterydachlogo.png" />
-    <None Remove="Assets\satisfactory.png" />
-    <None Remove="Assets\SmallLogo.png" />
     <None Remove="Commisions\faq.json" />
-    <None Remove="ProductsData\apps.json" />
-    <None Remove="ProductsData\games.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\assistance_ico.png" />
-    <Resource Include="Assets\name_changer_banner.png" />
-    <Resource Include="Assets\name_changer_ico.png" />
     <Content Include="Commisions\faq.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="LOGO_U.ico" />
-    <Content Include="ProductsData\apps.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ProductsData\games.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3351.48" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\assistance_banner.png" />
     <Resource Include="Assets\discord_logo.png" />
-    <Resource Include="Assets\factorio.png">
-      <CopyToOutputDirectory></CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Assets\github_logo.png" />
     <Resource Include="Assets\gmail_logo.png" />
     <Resource Include="Assets\LOGO_U.ico" />
     <Resource Include="Assets\LOGO_U.png">
-      <CopyToOutputDirectory></CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\nasterydachlogo.png">
-      <CopyToOutputDirectory></CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\satisfactory.png">
-      <CopyToOutputDirectory></CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\SmallLogo.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
