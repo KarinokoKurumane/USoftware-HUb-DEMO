@@ -7,32 +7,36 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Themes/TitleButtonStyle.xaml"/>
-                <ResourceDictionary Source="/Themes/TitleButtonExitStyle.xaml"/>
-                <ResourceDictionary Source="/Themes/TitleLabelButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/TitleButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/TitleButtonExitStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/TitleLabelButtonStyle.xaml"/>
 
-                <ResourceDictionary Source="/Themes/LoginWindowStyle.xaml"/>
-                <ResourceDictionary Source="/Themes/LoginButtonWide.xaml"/>
-                <ResourceDictionary Source="/Themes/LoginBorderStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/LoginWindowStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/LoginButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/LoginBorderStyle.xaml"/>
 
-                <ResourceDictionary Source="/Themes/MainButtonWide.xaml"/>
-                <ResourceDictionary Source="/Themes/MainAddButtonWide.xaml"/>
-                <ResourceDictionary Source="/Themes/ListBoxStyle.xaml"/>
-                <ResourceDictionary Source="/Themes/MainGreenButtonWide.xaml"/>
-                <ResourceDictionary Source="/Themes/MainAddGroupButtonWide.xaml"/>
-                <ResourceDictionary Source="/Themes/MainGroupButtonWide.xaml"/>
-                <ResourceDictionary Source="/Themes/MainRemoveGroupButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/MainButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/MainAddButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/ListBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/MainGreenButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/MainAddGroupButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/MainGroupButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/MainRemoveGroupButtonWide.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/DashboardGridStyle.xaml"/>
 
-                <ResourceDictionary Source="/Themes/TrayMenuItemStyle.xaml"/>
-                <ResourceDictionary Source="/Themes/TrayMenuContextMenuStyle.xaml"/>
-                <ResourceDictionary Source="/Themes/TrayMenuLabelStyle.xaml"/>
-                <ResourceDictionary Source="/Themes/TrayMenuSeparatorStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/TrayMenuItemStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/TrayMenuContextMenuStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/TrayMenuLabelStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/TrayMenuSeparatorStyle.xaml"/>
 
-                <ResourceDictionary Source="/Themes/HelpLogoButtonStyle.xaml"/>
-                <ResourceDictionary Source="/Themes/HelpH1TextBlockStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/HelpLogoButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/HelpH1TextBlockStyle.xaml"/>
 
-                <ResourceDictionary Source="/Themes/DashboardLogStyle.xaml"/>
-                <ResourceDictionary Source="/Themes/TagButtonLogStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/DashboardLogStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Styles/TagButtonLogStyle.xaml"/>
+
+                <ResourceDictionary Source="/Themes/DarkBlueTheme.xaml"/>
+                <ResourceDictionary Source="/Themes/DarkDarkTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <!-- Tray i jego logika (wymaga poprawy wizualnej bo ssie) -->

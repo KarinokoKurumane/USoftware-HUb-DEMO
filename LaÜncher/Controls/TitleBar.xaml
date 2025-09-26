@@ -43,15 +43,14 @@
 
                 <Button Grid.Column="3" Content="🛒SKLEP" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding ShopCommand}"/>
                 <Button Grid.Column="4" Content="📱APLIKACJE" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding AppCommand}"/>
-                <Button Grid.Column="5" Content="👤Profil" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding ProfileCommand}"/>
+                <Button Grid.Column="5" Content="👤PROFIL" Style="{StaticResource TitleLabelButtonStyle}" Command="{Binding ProfileCommand}"/>
                 
             </Grid>
 
             <Grid Grid.Column="1" HorizontalAlignment="Right">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1"/>
                     <!-- Grupa: logowanie + pomoc -->
-                    <ColumnDefinition Width="42"/>
+                    <ColumnDefinition Width="1"/>
                     <ColumnDefinition Width="42"/>
                     <ColumnDefinition Width="42"/>
                     <ColumnDefinition Width="1"/>
@@ -61,17 +60,16 @@
                     <ColumnDefinition Width="42"/>
                 </Grid.ColumnDefinitions>
 
-                <Rectangle Grid.Column="1" Height="32" Fill="#FF262626" VerticalAlignment="Center"/>
+                <Rectangle Grid.Column="0" Height="32" Fill="#FF262626" VerticalAlignment="Center"/>
+                
+                <Button Grid.Column="1" Content="🛠️" Style="{StaticResource TitleButtonStyle}" Command="{Binding SettingsCommand}" ToolTip="Ustawienia"/>
+                <Button Grid.Column="2" Content="❔" Style="{StaticResource TitleButtonStyle}" Command="{Binding HelpCommand}" ToolTip="Pomoc"/>
 
-                <!--<Button Grid.Column="1" Content="👤" Style="{StaticResource TitleButtonStyle}" Command="{Binding ProfileCommand}" ToolTip="Profil"/>-->
-                <Button Grid.Column="2" Content="🛠️" Style="{StaticResource TitleButtonStyle}" Command="{Binding SettingsCommand}" ToolTip="Ustawienia"/>
-                <Button Grid.Column="3" Content="❔" Style="{StaticResource TitleButtonStyle}" Command="{Binding HelpCommand}" ToolTip="Pomoc"/>
+                <Rectangle Grid.Column="3" Height="32" Fill="#FF262626" VerticalAlignment="Center"/>
 
-                <Rectangle Grid.Column="4" Height="32" Fill="#FF262626" VerticalAlignment="Center"/>
-
-                <Button Grid.Column="5" Content="—" Style="{StaticResource TitleButtonStyle}" Command="{Binding MinimizeCommand}"/>
-                <Button Grid.Column="6" Content="⬜" Style="{StaticResource TitleButtonStyle}" Command="{Binding MaximizeCommand}"/>
-                <Button Grid.Column="7" Content="✖" Style="{StaticResource TitleButtonExitStyle}" Command="{Binding CloseCommand}"/>
+                <Button Grid.Column="4" Content="—" Style="{StaticResource TitleButtonStyle}" Command="{Binding MinimizeCommand}"/>
+                <Button Grid.Column="5" Content="⬜" Style="{StaticResource TitleButtonStyle}" Command="{Binding MaximizeCommand}"/>
+                <Button Grid.Column="6" Content="✖" Style="{StaticResource TitleButtonExitStyle}" Command="{Binding CloseCommand}"/>
             </Grid>
         </Grid>
     </Border>

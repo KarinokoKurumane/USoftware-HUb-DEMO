@@ -144,6 +144,8 @@ namespace USoftware_HUb.MVVM.ViewModel
 
         private void Confirm()
         {
+            Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "ProductsData"));
+
             if (string.IsNullOrWhiteSpace(ProductName))
             {
                 MessageBox.Show("Musisz podać nazwę produktu.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);

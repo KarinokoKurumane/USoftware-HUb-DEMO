@@ -6,6 +6,7 @@ using USoftware_HUb.MVVM.Utility;
 using USoftwareHUB.Services;
 using USoftwareHUB.Models;
 using USoftwareHUB.Utility;
+using System.Windows.Controls;
 
 namespace USoftware_HUb.MVVM.ViewModel.Pages
 {
@@ -13,6 +14,18 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
     {
         public ObservableCollection<ProductItem> DisplayItems { get; set; } = new();
 
+        private UserControl _currentControl = UserControlManager.Get(UserControlManager.UserControls.Details)!;
+        public UserControl CurrentControl
+        {
+            get => _currentControl;
+            set
+            {
+                _currentControl = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ICommand OpenSettingsCommand { get; }
         public ICommand RunAppCommand { get; }
         public ICommand RunAsGroupCommand { get; }
         public ICommand AddToGroupCommand { get; }
@@ -80,7 +93,7 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
                 _selectedProduct = value;
                 OnPropertyChanged();
 
-                // Aktualizacja danych do kontrolki ProductDetails
+                // Aktualizacja danych do kontrolki ProductSheet
                 // Wymagana aktualizacja o kojejne dane (wymagania, tagi)
                 if (value != null)
                 {
@@ -105,6 +118,7 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
 
             LoadData();
 
+            OpenSettingsCommand = new RelayCommand(x => OpenSettings());
             RunAppCommand = new RelayCommand(x => RunApp());
             RunAsGroupCommand = new RelayCommand(x => RunAsGroup());
             AddToGroupCommand = new RelayCommand(x => AddToGroup());
@@ -122,6 +136,11 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
                 ShowPrograms();
             else
                 ShowGames();
+        }
+
+        private void OpenSettings()
+        {
+            CurrentControl = UserControlManager.Get(UserControlManager.UserControls.Settings)!;
         }
 
         private void RunApp()
@@ -165,7 +184,7 @@ namespace USoftware_HUb.MVVM.ViewModel.Pages
 
                 if (ServiceLocator.TryGet<LoggerService>(out var logger))
                 {
-                    logger!.LogException(ex);
+                    logger!.Log(ex);
                 }
             }
         }

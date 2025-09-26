@@ -1,0 +1,14 @@
+﻿[
+  {
+    "Id": "7bb0a049-e827-4e5e-a5d3-d6451ecd4a0b",
+    "AppType": 0,
+    "Name": "Asystent Ksi\u0119gowo\u015Bci",
+    "Description": "Taki se program, co se daty plik\u00F3w zmienia.",
+    "ExecutionPath": "E:\\VS Projects\\DateChanger\\DateChanger\\bin\\Debug\\net8.0-windows\\DateChanger.exe",
+    "Requirements": [],
+    "Producers": [],
+    "Publishers": [],
+    "IconPath": "E:\\Download\\assistance_ico.png",
+    "BannerPath": "E:\\Download\\assistance_banner.png"
+  }
+]
