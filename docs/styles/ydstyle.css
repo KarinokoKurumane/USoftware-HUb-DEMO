@@ -29,3 +29,28 @@ body {
     margin-right: auto;
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
+
+.modal-content {
+    background-color: transparent;
+  border: none;
+  box-shadow: none;
+
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modal-body img {
+    display: block;
+    object-fit: contain;
+    max-width: 80vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
