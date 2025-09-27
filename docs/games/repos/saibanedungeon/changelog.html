@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ÜSoftware Saibane Yuvhahane Dungeon Changelog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles/mainstyle.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Nawigacja -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">ÜSoftware Saibane Yuvhahane Dungeon Changelog</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gameNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="gameNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/index.html">Wróć do HÜB</a></li>
+            <li class="nav-item"><a class="nav-link" href="saibanedungeon.html">Strona Główna</a></li>
+            <li class="nav-item"><a class="nav-link" href="devlog.html">Devlog</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Galeria</a></li>
+            <li class="nav-item"><a class="nav-link" href="lore.html">Lore</a></li>
+            <li class="nav-item"><a class="nav-link" href="wiki.html">Wiki</a></li> -->
+            <li class="nav-item"><a class="nav-link" href="download.html">Pobieranie</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="container my-5">
+        <h2 class="mb-4">Lista zmian</h2>
+        <div class="accordion" id="changelogAccordion">
+            <!-- Dodaj kolejne wersje (odwrotna kolejność)-->
+            
+            <!-- Wersja 2145260925 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-2145260925">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2145260925" aria-expanded="true" aria-controls="collapse-2145260925">
+                        2145260925 – Enemy Update (26 wrzesień 2025)
+                    </button>
+                </h2>
+                <div id="collapse-2145260925" class="accordion-collapse collapse show" aria-labelledby="heading-2145260925" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Balans rozgrywki</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-warning text-dark">Bugfix</span>Sceny mają ograniczniki liczby przeciwników</li>
+                            <span>
+                                Od tej pory przeciwnicy są ograniczeni (najczęściej do 100) w spawnie. Zapobiegnie to dławieniu się gry na słabszych sprzętach.
+                            </span>
+                            <li><span class="badge bg-info">Balans</span>Poprawiono wydajność pobierania przeciwników z puli przez redukcję kodu</li>
+                            <li><span class="badge bg-info">Balans</span>Poprawiono wydajność działania atrybutów i potencjałów przez redukcję kodu</li>
+                            <span>
+                                Zmiana `foreach` na `for` oraz rezygnacja z LINQ częściowo wpłynęła na redukcję opóźnień sceny.
+                            </span>
+                            <li><span class="badge bg-info">Balans</span>Zwiększono obrażenia wszystkich broni o +-10</li>
+                            <li><span class="badge bg-info">Balans</span>Zredukowano systemowo prędkość przeciwnika o 50% (speed * .5f)</li>
+                            <span>
+                                Rozwiązanie tymczasowe, ponieważ jest ono sprzeczne z Saibane RPG System, ale pozwala graczowi dłużej przetrwać na scenie - wolniejsi przeciwnicy
+                            </span>
+                            <li><span class="badge bg-info">Balans</span>Zwiększono prędkość "pocisków" o 1</li>
+                            <li><span class="badge bg-info">Balans</span>Zwiększono czynniki kondycji wszystkich grywalnych postaci o +5</li>
+                        </ul>
+                        <!-- <div class="image-compare">
+                            <div class="image-box">
+                                <img src="/images/changelogs/enemies_new1.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Nowi przeciwnicy"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalenemies_new1">
+                                <div class="modal fade" id="modalenemies_new1" tabindex="-1" aria-labelledby="modalenemies_new1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-body p-0">
+                                                <img src="/images/changelogs/enemies_new1.png" class="w-100" alt="Nowi przeciwnicy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img src="/images/changelogs/player_rpg1.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Parametry gracza"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalplayer_rpg1">
+                                <div class="modal fade" id="modalplayer_rpg1" tabindex="-1" aria-labelledby="modalplayer_rpg1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-body p-0">
+                                                <img src="/images/changelogs/player_rpg1.png" class="w-100" alt="Parametry gracza">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="video-compare">
+                            <video controls width="100%">
+                                <source src="/videos/changelogs/testplay3.mp4" type="video/mp4">
+                                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                            </video>
+                            <video controls width="100%">
+                                <source src="/videos/changelogs/newrpgsystem1.mp4" type="video/mp4">
+                                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                            </video>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wersja 1620230925 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-1620230925">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1620230925" aria-expanded="true" aria-controls="collapse-1620230925">
+                        1900180925 – Enemy Update (23 wrzesień 2025)
+                    </button>
+                </h2>
+                <div id="collapse-1620230925" class="accordion-collapse collapse show" aria-labelledby="heading-1620230925" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Przeciwnicy</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Dodano 4 zwyczajnych przeciwników</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano 2 elitarnych przeciwników</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano 1 bossa</li>
+                        </ul>
+                        <div class="image-compare">
+                            <div class="image-box">
+                                <img src="/images/changelogs/enemies_new1.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Nowi przeciwnicy"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalenemies_new1">
+                                <div class="modal fade" id="modalenemies_new1" tabindex="-1" aria-labelledby="modalenemies_new1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-body p-0">
+                                                <img src="/images/changelogs/enemies_new1.png" class="w-100" alt="Nowi przeciwnicy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wersja 1900180925 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-1900180925">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1900180925" aria-expanded="true" aria-controls="collapse-1900180925">
+                        1900180925 – Battle Update (18 wrzesień 2025)
+                    </button>
+                </h2>
+                <div id="collapse-1900180925" class="accordion-collapse collapse show" aria-labelledby="heading-1900180925" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Rdzeń rozgrywki</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Implementacja Battle Rank System (BR) - Wartość bojowa postaci, im większa tym silniejsza postać</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano BR dla scen. Od tej pory sceny mające zakres BR będą generować wrogów w tym zakresie</li>
+                            <li><span class="badge bg-warning text-dark">Bugfix</span>Poprawiono Saibane RPG System o precyzyjne przeliczanie atrybutów</li>
+                        </ul>
+                        <h5>Interfejs</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Na scenie jest widoczne aktualne BR danej sceny</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano dźwięk kliknięcia. Działa on ze wszystkim przyciskami UI</li>
+                        </ul>
+                        <div class="image-compare">
+                            <div class="image-box">
+                                <img src="/images/changelogs/enemy_rpg1.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Parametry przeciwnika"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalenemy_rpg1">
+                                <div class="modal fade" id="modalenemy_rpg1" tabindex="-1" aria-labelledby="modalenemy_rpg1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-body p-0">
+                                                <img src="/images/changelogs/enemy_rpg1.png" class="w-100" alt="Parametry przeciwnika">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img src="/images/changelogs/player_rpg1.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Parametry gracza"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalplayer_rpg1">
+                                <div class="modal fade" id="modalplayer_rpg1" tabindex="-1" aria-labelledby="modalplayer_rpg1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-body p-0">
+                                                <img src="/images/changelogs/player_rpg1.png" class="w-100" alt="Parametry gracza">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wersja 1900090925 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-1900090925">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1900090925" aria-expanded="true" aria-controls="collapse-1900090925">
+                        1900090925 – Collider Update (09 wrzesień 2025)
+                    </button>
+                </h2>
+                <div id="collapse-1900090925" class="accordion-collapse collapse show" aria-labelledby="heading-1900090925" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Rdzeń rozgrywki</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Przeciwnicy mają wspólny rdzeń kontroli `EnemiesController`</li>
+                            <li><span class="badge bg-success">Nowość</span>Pooling przeciwników `PoolEnemiesManager`</li>
+                            <li><span class="badge bg-warning text-dark">Bugfix</span>Resetowanie statystyk postaci po ich śmierci</li>
+                        </ul>
+                        <h5>Poprawki / balans przeciwników</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-warning text-dark">Bugfix</span>Przeciwnicy mają poprawione Collider2D</li>
+                            <li><span class="badge bg-warning text-dark">Bugfix</span>Gracz ma poprawiony Collider2D</li>
+                        </ul>
+                        <div class="image-compare">
+                            <div class="image-box">
+                                <img src="/images/changelogs/collider_old.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Stary collider"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalColliderOld">
+                                <div class="modal fade" id="modalColliderOld" tabindex="-1" aria-labelledby="modalLabelOld" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-body p-0">
+                                                <img src="/images/changelogs/collider_old.png" class="w-100" alt="Stary collider">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img src="/images/changelogs/collider_new.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Nowy collider"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalColliderNew">
+                                <div class="modal fade" id="modalColliderNew" tabindex="-1" aria-labelledby="modalLabelNew" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-body p-0">
+                                                <img src="/images/changelogs/collider_new.png" class="w-100" alt="Nowy collider">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wersja 2222080925 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-2222080925">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2222080925" aria-expanded="true" aria-controls="collapse-2222080925">
+                        2222080925 – UI Update (08 wrzesień 2025)
+                    </button>
+                </h2>
+                <div id="collapse-2222080925" class="accordion-collapse collapse show" aria-labelledby="heading-2222080925" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Rdzeń rozgrywki</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Przeciwnicy pojawiają się w nieskończonych falach. Zaczynając od kilku jednostek od początku rozgrywki</li>
+                        </ul>
+                        <h5>Interfejs</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Dodano podsumowanie po śmierci na arenie</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano licznik zabitych typów przeciwników na arenie</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano licznik czasu przetrwania na arenie</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano nazwę przeciwnika, który pokonał gracza</li>
+                        </ul>
+                        <h5>Poprawki / balans przeciwników</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Przeciwnicy mogą już atakować gracza. Do ataku dochodzi w momencie dotknięcia wroga</li>
+                        </ul>
+                        <div class="image-box">
+                                <img src="/images/changelogs/end_screen.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Nowy ekran"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalNewScreen">
+                                <div class="modal fade" id="modalNewScreen" tabindex="-1" aria-labelledby="modalNewScreen" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-body p-0">
+                                                <img src="/images/changelogs/end_screen.png" class="w-100" alt="Nowy ekran">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wersja 1000060925 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-1000060925">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1000060925" aria-expanded="true" aria-controls="collapse-1000060925">
+                        1000060925 – RPG Update (06 wrzesień 2025)
+                    </button>
+                </h2>
+                <div id="collapse-1000060925" class="accordion-collapse collapse show" aria-labelledby="heading-1000060925" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Saiban RPG System</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Zaimplementowano Saibane RPG System</li>
+                            <li><span class="badge bg-success">Nowość</span>Każda postać w grze (gracz, przeciwnik, npc) posiadają potencjał i atrybuty</li>
+                            <li><span class="badge bg-success">Nowość</span>Każdy przedmiot w grze (bronie, ulepszenia) posiada system jakości zwany Tier, oraz atrybuty</li>
+                        </ul>
+                        <h5>Interfejs</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Dodano licznik zabitych na arenie</li>
+                            <li><span class="badge bg-warning text-dark">Bugfix</span>Przy wyborze postaci pojawia się już komplet atrybutów</li>
+                        </ul>
+                        <h5>Poprawki / balans przeciwników</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Przeciwnicy otrzymują już obrażenia w `HP`. Po jego spadku do 0 przeciwnik ginie</li>
+                        </ul>
+                        <div class="video-compare">
+                            <video controls width="100%">
+                                <source src="/videos/changelogs/testplay3.mp4" type="video/mp4">
+                                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                            </video>
+                            <video controls width="100%">
+                                <source src="/videos/changelogs/newrpgsystem1.mp4" type="video/mp4">
+                                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wersja 2240310825 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-2240310825">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2240310825" aria-expanded="true" aria-controls="collapse-2240310825">
+                        2240310825 – Texture Update (31 sierpnień 2025)
+                    </button>
+                </h2>
+                <div id="collapse-2240310825" class="accordion-collapse collapse show" aria-labelledby="heading-2240310825" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Nowości</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Dodano tekstury terenu (kafelki)</li>
+                            <li><span class="badge bg-success">Nowość</span>Przeciwnicy po trafieniu giną</li>
+                        </ul>
+                        <h5>Poprawki / balans przeciwników</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-warning text-dark">Bugfix</span>Przeciwnicy mogą się już poruszać - idą zawsze w stronę gracza</li>
+                            <li><span class="badge bg-warning text-dark">Bugfix</span>Ataki gracza - AttackEffect - od tej pory poruszają sie</li>
+                            <li><span class="badge bg-warning text-dark">Bugfix</span>Ataki gracza - AttackEffect - od tej pory mają prawidłowy zwrot</li>
+                            <li><span class="badge bg-warning text-dark">Bugfix</span>Poprawiono rozmiar sprite AttackEffect</li>
+                        </ul>
+                        <div class="video-compare">
+                            <video controls width="100%">
+                                <source src="/videos/changelogs/testplay_old.mp4" type="video/mp4">
+                                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                            </video>
+                            <video controls width="100%">
+                                <source src="/videos/changelogs/testplay2.mp4" type="video/mp4">
+                                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+            <!-- Wersja 1821290825 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-1821290825">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1821290825" aria-expanded="false" aria-controls="collapse-1821290825">
+                  1821290825 – Wznowienie projektu (29 sierpnień 2025)
+                </button>
+              </h2>
+              <div id="collapse-1821290825" class="accordion-collapse collapse" aria-labelledby="heading-1821290825" data-bs-parent="#changelogAccordion">
+                <div class="accordion-body">
+                  <ul class="custom-list">
+                    <li><span class="bullet">✓</span>Przemodelowano całkowicie format wyboru postaci</li>
+                    <li><span class="bullet">✓</span>Dodano wstępne atrybuty dla postaci, oraz możliwość ich podglądu podczas wuboru postaci</li>
+                    <div class="video-compare">
+                        <video controls width="100%">
+                            <source src="/videos/changelogs/character_selection_old.mp4" type="video/mp4">
+                            Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                        </video>
+                        <video controls width="100%">
+                            <source src="/videos/changelogs/character_selection_new.mp4" type="video/mp4">
+                            Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                        </video>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    <section>
+
+    <!-- Stopka -->
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2025 Karinoko. Wszystkie prawa zastrzeżone, nawet Twoje.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
