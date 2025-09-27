@@ -1,0 +1,31 @@
+:root {
+    background-image: url('../images/yd/mainmenubackground.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border-radius: 0.5rem;
+}
+
+body {
+    background-color: rgba(0,0,0,0.0);
+}
+
+.translucent-panel {
+    background-color: rgba(0, 0, 0, 0.6); /* półprzezroczyste tło */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    color: #f8f9fa; /* jasny tekst na ciemnym tle */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.translucent-panel-changelog {
+    background-color: rgba(0, 0, 0, 0.6); /* półprzezroczyste tło */
+    border-radius: 0.5rem;
+    color: #f8f9fa; /* jasny tekst na ciemnym tle */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
