@@ -91,8 +91,52 @@
                         </div>
                         <span>
                           Plan był następujący - zamiast bawić się w tworzenie sztucznych obiektów by na nich testować CSS - zrobić prefab UI i go kopiować.
-                          No nic lepszego spotkać mnie już nie mogło jeśli chodzi o plan z UI.
+                          No nic lepszego spotkać mnie już nie mogło jeśli chodzi o plan z UI. <br>
+                            Kolejną przeszkodą do stworzenia dobrego UI było to jak i ile pokazać ze stratystyk wyświetlanej postaci.
+                            Stara wersja pokazywała tylko atrybuty, a do tego czytelność była... no była średnia.
                         </span>
+                        <div class="image-compare">
+                            <div class="image-box">
+                                <img src="../../../images/devlogs/dev1_oldattcharcard.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Kod UI"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modaloldattcharcard">
+                                <div class="modal fade" id="modaloldattcharcard" tabindex="-1" aria-labelledby="modaloldattcharcard" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="../../../images/devlogs/dev1_oldattcharcard.png" alt="Kod UI">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span>
+                            Skoro sama karta postaci została znacząco powiększona (z 300 na 400 px) to może warto byłoby też dodać więcej informacji o danej postaci. Postać jest określana nie tylko przez atrybuty,
+                            ale też przez potencjały. Liczba potencjałów jest stała - 5, a liczba atrybutów stoi jeszcze pod znakiem zapytania. Jednak zdecydowałem się na `sztywne` ulokowanie w kodzie UI zarówno potencjałów jak i atrybutów.
+                            Jeżeli kiedyś przyjdzie mi dodać jeszcze jakieś atrybuty to i tak bym musiał poprawić UI pod to, więc ostatecznie decyzja ta wydaje się być jak najbardziej słuszna i rozsądna.
+                            Odpada mi w ten sposób część kodu, a to plus - czytelniejsze klasy i metody.
+                        </span>
+                        <div class="image-compare">
+                            <div class="image-box">
+                                <img src="../../../images/devlogs/dev1_newattcharcard.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Kod UI"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalnewattcharcard">
+                                <div class="modal fade" id="modalnewattcharcard" tabindex="-1" aria-labelledby="modalnewattcharcard" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="../../../images/devlogs/dev1_newattcharcard.png" alt="Kod UI">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!--<ul class="custom-list">
                             <li><span class="badge bg-success">Nowość</span>Dodano tekstury terenu (kafelki)</li>
                             <li><span class="badge bg-success">Nowość</span>Przeciwnicy po trafieniu giną</li>
