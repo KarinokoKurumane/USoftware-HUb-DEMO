@@ -45,10 +45,12 @@
                 <div id="collapse-v09" class="accordion-collapse collapse show" aria-labelledby="heading-v09" data-bs-parent="#changelogAccordion">
                     <div class="accordion-body">
                         <h5>Lepsze UI</h5>
-                        <span>
+                        <p>
                             Przynajmniej chciałbym aby było można je nazwać lepszym. Wybór postaci to też doświadczenie gry, dlatego chciałem zrobić coś co będzie wyglądało miło dla oka.
-                            Tak właśnie powtało nowe UI dla wyporu postaci.
-                        </span>
+                            Tak właśnie powtało nowe UI dla wyporu postaci.<br>
+                            Stare UI nie powalało wyglądem, ale było w nim coś co wymagało poprawek i to nie wizulanych - kod. Kod był straszny.
+                            Miał on coś w sobie, gdyż całość była generowana, ale ciężko projektować CSS dla czegoś czego nie widać.
+                        </p>
                         <div class="image-compare">
                             <div class="image-box">
                                 <img src="../../../images/devlogs/newUI.png"
@@ -66,12 +68,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <span>
-                          Stare UI nie powalało wyglądem, ale było w nim coś co wymagało poprawek i to nie wizulanych - kod. Kod był straszny.
-                          Miał on coś w sobie, gdyż całość była generowana, ale ciężko projektować CSS dla czegoś czego nie widać.
-                        </span>
-                        <div class="image-compare">
                             <div class="image-box">
                                 <img src="../../../images/devlogs/dev1_uicreator.png"
                                     class="img-fluid clickable-image"
@@ -89,12 +85,12 @@
                                 </div>
                             </div>
                         </div>
-                        <span>
-                          Plan był następujący - zamiast bawić się w tworzenie sztucznych obiektów by na nich testować CSS - zrobić prefab UI i go kopiować.
-                          No nic lepszego spotkać mnie już nie mogło jeśli chodzi o plan z UI. <br>
+                        <p>
+                            Plan był następujący - zamiast bawić się w tworzenie sztucznych obiektów by na nich testować CSS - zrobić prefab UI i go kopiować.
+                            No nic lepszego spotkać mnie już nie mogło jeśli chodzi o plan z UI. <br>
                             Kolejną przeszkodą do stworzenia dobrego UI było to jak i ile pokazać ze stratystyk wyświetlanej postaci.
                             Stara wersja pokazywała tylko atrybuty, a do tego czytelność była... no była średnia.
-                        </span>
+                        </p>
                         <div class="image-compare">
                             <div class="image-box">
                                 <img src="../../../images/devlogs/dev1_oldattcharcard.png"
@@ -113,12 +109,12 @@
                                 </div>
                             </div>
                         </div>
-                        <span>
+                        <p>
                             Skoro sama karta postaci została znacząco powiększona (z 300 na 400 px) to może warto byłoby też dodać więcej informacji o danej postaci. Postać jest określana nie tylko przez atrybuty,
                             ale też przez potencjały. Liczba potencjałów jest stała - 5, a liczba atrybutów stoi jeszcze pod znakiem zapytania. Jednak zdecydowałem się na `sztywne` ulokowanie w kodzie UI zarówno potencjałów jak i atrybutów.
                             Jeżeli kiedyś przyjdzie mi dodać jeszcze jakieś atrybuty to i tak bym musiał poprawić UI pod to, więc ostatecznie decyzja ta wydaje się być jak najbardziej słuszna i rozsądna.
                             Odpada mi w ten sposób część kodu, a to plus - czytelniejsze klasy i metody.
-                        </span>
+                        </p>
                         <div class="image-compare">
                             <div class="image-box">
                                 <img src="../../../images/devlogs/dev1_newattcharcard.png"
@@ -137,6 +133,63 @@
                                 </div>
                             </div>
                         </div>
+                        <p>
+                            Samo zwiększenie czytelności nie wystarczyło. Pobawiłem się trochę na testowych obiektach i udało mi się uzyskać ciekawy efekt. O nim będzie przy okazji omówienia "nowych szat króla".
+                            W skrócie efekt nie jest jeszcze wybitny, ale daje sporo możliwości w przyszłości, gdy przyjdzie robić już bardziej precyzyjną grafikę dla gry.<br><br>
+                            Wracając do czytelności - udało się uzyskać wszystkie oczekiwane rezultaty. Gracz od tej pory będzie widział zarówno potencjały danej postaci, jak i jej atrybuty.
+                            I to wszystko z jeszcze mniejszą liczbą kodu, niż miało to miejsce poprzednio.
+                        </p><br><br>
+                        <h5>Nowe szaty króla</h5>
+                        <p>
+                            Może i żadna z grywalnych postaci nie jest królem, ale zostały one znacząco odświerzone. Poprzednie były wyciągnięte z odmętów innych projektów, przez co średnio pasowały (były ładne, ale tylko tyle).
+                            Teraz postacie przypominają wojowników (temtyka zbliżona do średniowiecza), nie są piękni, bo na śmierć raczej miss lub mister piękności nie pójdzie. Jednak na wyglądzie samych potretów się to nie kończy.
+                            Poprzedenie portrety jak i sprite'y postaci były... powiedzmy, że były "takie se", teraz mają zbliżone wyglądy do siebie. Widzisz na portrecie typa w hełmie i z brodą, to sprite też będzie miał typa z brodą i w hełmie.
+                            Nie jest to 1:1, ale z odległości nie widać aż takich różnic.
+                        </p>
+                        <div class="image-compare">
+                            <div class="image-box">
+                                <img src="../../../images/devlogs/newchar1.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Kod UI"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalnewchar1">
+                                <div class="modal fade" id="modalnewchar1" tabindex="-1" aria-labelledby="modalnewchar1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="../../../images/devlogs/newchar1.png" alt="Kod UI">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img src="../../../images/devlogs/newchar1sprite.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Kod UI"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalnewchar1sprite">
+                                <div class="modal fade" id="modalnewchar1sprite" tabindex="-1" aria-labelledby="modalnewchar1sprite" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="../../../images/devlogs/newchar1sprite.png" alt="Kod UI">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Do tego wszystkiego nakładamy dowolne tło i można szaleć z kontekstem. No przynajmniej tak sobie to wyobrażam, rzeczywistość zweryfikuje. Bawiąc się jeszcze obramowaniem UI może uda się uzyskać jeszcze jakiś ciekawszy efekt.
+                            <br><br>
+                            Pozostaje teraz już tylko kwestia broni. Wyboru broni. Tutaj będzie ciekawiej - bo trudniej. Mało miejsca z powodu większych kart postaci, a same bronie również mają atrybuty. Do trgo inne niż te, które ma gracz.
+                            Do tej pory gracz dostał ikonkę broni i to musiało mu wystarczyć, brak wiedzy o jej parametrach mógłby mieć negatywny wpływ na odbiór gry. Dlatego też wpładłem na ciekawszy pomysł - jeśli brakuje mi miejsca - to muszę je sobie zrobić.
+                            Na całe szczęscie nie będzie to wymagało przebudowy UI na scenie, czy przeniesienia kard postaci. Po wyborze postaci, ta otrzyma swoją domyślną broń (w planach jest aby była to ostatnio użyta) a pod jej portretem (postaci)
+                            pojawi się przycisk "Wybierz broń". Jego zadaniem będzie aktywacja okienka z wyborem broni. W tym okienku gracz będzie miał wszystkie odblokowane dla danej postaci bronie, oraz będzie mógł w końcu zobaczyć czym różnią się bronie.
+                            <br><br>
+                            Do zobaczenia za tydzień!
+                        </p>
                         <!--<ul class="custom-list">
                             <li><span class="badge bg-success">Nowość</span>Dodano tekstury terenu (kafelki)</li>
                             <li><span class="badge bg-success">Nowość</span>Przeciwnicy po trafieniu giną</li>
