@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ÜSoftware Saibane Yuvhahane Dungeon</title>
+    <title>Saibane Yuvhahane Dungeon Dev-logs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../../styles/mainstyle.css" rel="stylesheet">
     <link href="../../../styles/ydstyle.css" rel="stylesheet">
@@ -13,7 +13,7 @@
     <!-- Nawigacja -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">ÜSoftware Saibane Yuvhahane Dungeon</a>
+        <a class="navbar-brand" href="#">Saibane Yuvhahane Dungeon Dev-logs</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gameNav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,14 +39,59 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="heading-v09">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-v09" aria-expanded="true" aria-controls="collapse-v09">
-                        27 wrzesień 2025
+                        28 wrzesień 2025
                     </button>
                 </h2>
                 <div id="collapse-v09" class="accordion-collapse collapse show" aria-labelledby="heading-v09" data-bs-parent="#changelogAccordion">
                     <div class="accordion-body">
-                        <h5>Nowości</h5>
+                        <h5>Lepsze UI</h5>
                         <span>
-                            Pierwsze dev-logi pojawią się już wkrótce (w październiku)
+                            Przynajmniej chciałbym aby było można je nazwać lepszym. Wybór postaci to też doświadczenie gry, dlatego chciałem zrobić coś co będzie wyglądało miło dla oka.
+                            Tak właśnie powtało nowe UI dla wyporu postaci.
+                        </span>
+                        <div class="image-compare">
+                            <div class="image-box">
+                                <img src="../../../images/devlogs/newUI.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Nowe UI"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalnewUI">
+                                <div class="modal fade" id="modalnewUI" tabindex="-1" aria-labelledby="modalnewUI" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="../../../images/devlogs/newUI.png" alt="Nowe UI">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span>
+                          Stare UI nie powalało wyglądem, ale było w nim coś co wymagało poprawek i to nie wizulanych - kod. Kod był straszny.
+                          Miał on coś w sobie, gdyż całość była generowana, ale ciężko projektować CSS dla czegoś czego nie widać.
+                        </span>
+                        <div class="image-compare">
+                            <div class="image-box">
+                                <img src="../../../images/devlogs/dev1_uicreator.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Kod UI"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modaldev1_uicreator">
+                                <div class="modal fade" id="modaldev1_uicreator" tabindex="-1" aria-labelledby="modaldev1_uicreator" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="../../../images/devlogs/dev1_uicreator.png" alt="Kod UI">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span>
+                          Plan był następujący - zamiast bawić się w tworzenie sztucznych obiektów by na nich testować CSS - zrobić prefab UI i go kopiować.
+                          No nic lepszego spotkać mnie już nie mogło jeśli chodzi o plan z UI.
                         </span>
                         <!--<ul class="custom-list">
                             <li><span class="badge bg-success">Nowość</span>Dodano tekstury terenu (kafelki)</li>
