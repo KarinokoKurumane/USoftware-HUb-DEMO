@@ -35,6 +35,54 @@
         <h2 class="mb-4">Niedzielne Dev-logi</h2>
         <div class="accordion" id="changelogAccordion">
             <!-- Dodaj kolejne wersje (odwrotna kolejność)-->
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-051025">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-051025" aria-expanded="true" aria-controls="collapse-051025">
+                        5 październik 2025
+                    </button>
+                </h2>
+                <div id="collapse-051025" class="accordion-collapse collapse show" aria-labelledby="heading-051025" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Jeszcze lepsze UI</h5>
+                        <p>
+                            Wygląd "Wyboru postaci" został zdecydowanie poprawiony. Jednak nie tylko na samych postaciach bazuje ta scena. Broń. Broń ma równie wielkie znaczenie co sama postać.
+                            <br>
+                            Do tej pory gracz miał możliwość wyboru broni na podstawie ikonki, która pojawiała się po wybraniu danej postaci. To było zdecydowanie za mało. Brak informacji o tym co to za broń (obrazek broni sporo mówił, ale dalej za mało),
+                            jakie ma parametry i ulepszenia. Jedynie co można było zrobić to zwyczajnie wybrać broń A lub broń B.
+                            <br>
+                            Pierwszy plan zakładał tooltip wyświetlany po najechaniu na ikonę danej broni, ale ze względu na ilość dostępnych (i planowanych) atrybutów - byłoby to nieczytelne.
+                            Dlatego planem awaryjnym była rozbudowana dawka informacji o broni, która swoje miejsce miała mieć między ikoną broni, a przyciskiem zatwierdzającym wybory.
+                            Jednak poprawa (a co za tym idzie powiększenie) kart postaci sprawiło, że ten plan równiesz poleciał do kosza. Na papierze wyglądało wszystko ładnie, ale końcowe szlify pokazały wady w innych miejscach.
+                            <br>
+                            Brak miejsca na to by pokazać broń wymusił stworzenie dedykowanego okna dla wyboru broni. W poprzednim devlogu wspominałem o dodaniu przycisku "wybierz broń". Nie będzie go.
+                            Zamiast dawać przycisk postanowiłem pokazać najważniejsze informacje o broni. Gracz może klikną ikonę broni, co pozwoli mu otworzyć okno, w którym będzie miał możliwość zobaczyć wszystkie dostępne bronie dla danej postaci,
+                            poznać dokładne parametry danej broni, a także stopień biegłości w danej broni.
+                        </p>
+                        <br>
+                        <h5>Biegłość w broni</h5>
+                        <p>
+                            Całkowicie nowa funkcja, która miała być dodana później, ale z powodu zmiany wyglądu procesu wyboru postaci uznałem, że warto to wprowadzić prędzej.
+                            Pozwoli ona graczowi zwiększyć możliwości bojowe danej broni. Każda broń będzie miała cztery etapy biegłość, a każdy z nich będzie wymagał zabicia określonej ilości przeciwników. Im lepszy tier broni, tym większe będą wymagania.
+                            Bigłość będzie na stałe zwiększać konkretne atrybuty broni.
+                            <br><br>
+                            Opracowywana jest także metoda obliczania BR dla broni.
+                        </p>
+                        <br>
+                        <h5>Battle Rank</h5>
+                        <p>
+                            Broń ma otrzymać swoje BR, ale i postacie (w tym wrogowie) muszą mieć je poprawione.
+                            Obecny sposób obliczania BR jest bardzo uogólniony, co może prowadzić do pewnych komplikacji. BR gracza jest obliczane inaczej niż BR przeciwników, mimo, że działa na podobnej zasadzie.
+                            Zmiany będą dotyczyć nie tylko potencjałów (jak ma to miejsce obecnie), ale atrybutów. Gracza potencjał był obliczany kompletnie (wszystkie 5), zaś u wrogów tylko 3 (S, C i D), głównie za sprawą, że P i W nie miały dla przeciwników zastosowania.
+                            W końcu wrogowi nie potrzeba percepcji, jeśli ten zawsze idzie do gracza, ani nie potrzeba wiedzy, bo nie ma ona w niczym zastosowania.
+                            Muszę znaleźć jakiś lepszy sposób przeliczania BR, aby przeciwnicy byli odpowiednio dobierani na arenach, a gracz odpowiednio był nagradzany doświadczeniem.
+                            <br>
+                            <br>
+                            Na dziś to tyle, widzimy się za tydzień.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
             <div class="accordion-item">
                 <h2 class="accordion-header" id="heading-v09">
@@ -183,8 +231,8 @@
                         <p>
                             Do tego wszystkiego nakładamy dowolne tło i można szaleć z kontekstem. No przynajmniej tak sobie to wyobrażam, rzeczywistość zweryfikuje. Bawiąc się jeszcze obramowaniem UI może uda się uzyskać jeszcze jakiś ciekawszy efekt.
                             <br><br>
-                            Pozostaje teraz już tylko kwestia broni. Wyboru broni. Tutaj będzie ciekawiej - bo trudniej. Mało miejsca z powodu większych kart postaci, a same bronie również mają atrybuty. Do trgo inne niż te, które ma gracz.
-                            Do tej pory gracz dostał ikonkę broni i to musiało mu wystarczyć, brak wiedzy o jej parametrach mógłby mieć negatywny wpływ na odbiór gry. Dlatego też wpładłem na ciekawszy pomysł - jeśli brakuje mi miejsca - to muszę je sobie zrobić.
+                            Pozostaje teraz już tylko kwestia broni. Wyboru broni. Tutaj będzie ciekawiej - bo trudniej. Mało miejsca z powodu większych kart postaci, a same bronie również mają atrybuty. Do tego inne niż te, które ma gracz.
+                            Do tej pory gracz dostawał ikonkę broni i to musiało mu wystarczyć, brak wiedzy o jej parametrach mógłby mieć negatywny wpływ na odbiór gry. Dlatego też wpładłem na ciekawszy pomysł - jeśli brakuje mi miejsca - to muszę je sobie zrobić.
                             Na całe szczęscie nie będzie to wymagało przebudowy UI na scenie, czy przeniesienia kard postaci. Po wyborze postaci, ta otrzyma swoją domyślną broń (w planach jest aby była to ostatnio użyta) a pod jej portretem (postaci)
                             pojawi się przycisk "Wybierz broń". Jego zadaniem będzie aktywacja okienka z wyborem broni. W tym okienku gracz będzie miał wszystkie odblokowane dla danej postaci bronie, oraz będzie mógł w końcu zobaczyć czym różnią się bronie.
                             <br><br>
