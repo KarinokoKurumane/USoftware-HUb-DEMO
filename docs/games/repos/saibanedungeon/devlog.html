@@ -36,6 +36,119 @@
         <div class="accordion" id="changelogAccordion">
             <!-- Dodaj kolejne wersje (odwrotna kolejność)-->
             
+            <!-- <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-051025">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-051025" aria-expanded="true" aria-controls="collapse-051025">
+                        5 październik 2025
+                    </button>
+                </h2>
+                <div id="collapse-051025" class="accordion-collapse collapse show" aria-labelledby="heading-051025" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Jeszcze lepsze UI</h5>
+                        
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-121025">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-121025" aria-expanded="true" aria-controls="collapse-121025">
+                        12 październik 2025
+                    </button>
+                </h2>
+                <div id="collapse-121025" class="accordion-collapse collapse show" aria-labelledby="heading-121025" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Paski zdrowia</h5>
+                        <p>
+                            Mieliśmy UI dla wyboru postaci i dla broni, czas zabrać się za postacie w samej grze. Podczas rozgrywki gracz trafienie rozpoznać może tylko przez to, że zniknął przeciwnik.
+                            Nie wiedomo czy się trafiło czy może zasięg broni właśnie się skończył i efekt zniknął. Dlatego aby rozwiązać ten problem postanowiłem zaimplementować "pasek zdrowia". Jednak Unity nie dało mi żadnych złudzeń - nie będzie to takie proste.
+                            Pierwotny plan zakładał zastosowanie klasycznego slidera, którego drobna modyfikacja pozwoliłaby na bezproblemowe wyświetlanie stanu zdrowia danej postaci.
+                        </p>
+                        <div class="image-compare">
+                            <div class="image-box">
+                                <img src="../../../images/devlogs/dev3_hpbar1.png"
+                                    class="img-fluid clickable-image"
+                                    alt="HP Bar"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalhpBar">
+                                <div class="modal fade" id="modalhpBar" tabindex="-1" aria-labelledby="modalhpBar" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="../../../images/devlogs/dev3_hpbar1.png" alt="HP Bar">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img src="../../../images/devlogs/dev3_hpbar2.png"
+                                    class="img-fluid clickable-image"
+                                    alt="HP Bar postaci"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalhpBarCh">
+                                <div class="modal fade" id="modalhpBarCh" tabindex="-1" aria-labelledby="modalhpBarCh" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="../../../images/devlogs/dev3_hpbar2.png" alt="HP Bar postaci">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Struktura wewnętrzna slidera to jawny koszmar. Zmiana jednego elementu dewastowała wizualnie resztę, ciężko było też ustalić co do czego. Skoro jeden plan runął było trzeba sięgnąć po plan "B" - własny pasek HP.
+                            <br><br>
+                            Własny pasek ma jedną istotną cechę - wiesz co w nim jest i wiesz jak tego użyć. Dlatego jego stworzenie było dziecinnie proste - dwa elementy, jeden jako "kontener", a drugi jako właściwy pasek.
+                            Następnym krokiem było już tylko zrobienie przyjemnego dla oka stylu. To też nie było jakimś wyzwaniem, ot czerwony kolor paska, ciemniejsze tło, aby było widać ubytek i gotowe. Ostatnim zadaniem było już tylko jego implementacja w kodzie.
+                            No i tu zaczęły się przysłowiowe wiosła. Okazało się, że UI nie chciało zbytnio współpracować z kodem - pasek był widoczny... ale go nie było - nie był on widoczny dla kodu. Osadzenie czegoś oczywistego w nieoczywistym miejscu.
+                            Przeciwnicy (bo to na nich był testowany ów pasek) nie są generowani normalnie, a co za tym idzie nie mogłem "nienormalnie" zaimplementować paska. Brzmi to zagmatwanie, ale skracając to można powiedzieć - metoda "Start" nie była stosowana.
+                            Tak się też złożyło, że to właśnie ta metoda była kluczem do rozwiązania problemów, osadzony tam kod UI paska pozwolił go nie tylko zobaczyć wizualnie, ale także ze strony kodu.
+                            Następnie wprowadziłem kilka poprawek, aby pasek nie był zbyt długi oraz nieco zwiększyłem jego szerokość.
+                        </p>
+                        <div class="image-compare">
+                            <div class="image-box">
+                                <img src="../../../images/devlogs/dev3_hpbar3.png"
+                                    class="img-fluid clickable-image"
+                                    alt="HP Bar postaci 2"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalhpBar3">
+                                <div class="modal fade" id="modalhpBar3" tabindex="-1" aria-labelledby="modalhpBar3" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="../../../images/devlogs/dev3_hpbar3.png" alt="HP Bar postaci 2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img src="../../../images/devlogs/dev3_hpbar4.png"
+                                    class="img-fluid clickable-image"
+                                    alt="HP Bar postaci 3"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalhpBar4">
+                                <div class="modal fade" id="modalhpBar4" tabindex="-1" aria-labelledby="modalhpBar4" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="../../../images/devlogs/dev3_hpbar4.png" alt="HP Bar postaci 3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Tym o to akcentem kończę na dziś i do zobaczenia już za tydzień.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <div class="accordion-item">
                 <h2 class="accordion-header" id="heading-051025">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-051025" aria-expanded="true" aria-controls="collapse-051025">
