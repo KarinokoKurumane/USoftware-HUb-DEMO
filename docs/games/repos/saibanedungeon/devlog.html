@@ -51,6 +51,54 @@
             </div> -->
 
             <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-191025">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-191025" aria-expanded="true" aria-controls="collapse-191025">
+                        19 październik 2025
+                    </button>
+                </h2>
+                <div id="collapse-191025" class="accordion-collapse collapse show" aria-labelledby="heading-191025" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Masa zmian</h5>
+                        <p>
+                            Co to był za tydzień, tyle planów do zrealizowania w grze, a ostatecznie zrobiłem coś zupełnie innego.
+                            Na pierwszy ogień niech pójdzie sposób zapisu wersji. Na swoje potrzeby (częste poprawki) zdecydowałem się na własny zapis, nie jest unikalny (tzn nie był), ale w miarę czytelny "DDMMYYHHVC".
+                            Zapis prosty, ale doszedłem do wniosku, że mógłby powodować on drobne problemy w orientacji między kolenymi wersjami, dlatego nowy zapis - "YYMMDDVVCC". Prostota zachowana i nie będzie już problemów w orientacji.
+                        </p>
+                        <h5>Dźwięki</h5>
+                        <p>
+                            Niby tylko zwykłe dźwięki, ale jak znacząco wpływają na rozgrywkę. Dodanie do menu głównego utworu pogrywającego w tle nie daje już takiego efektu pustki (tak wiem, UI tam dalej woła o wypełnienie).
+                            Długo kombinowałem jakiego utworu potrzebuję, ostatecznie padło na motyw horroru, co idealnie będzie się komponowało z tym co gracz spotka w trakcie rozgrywki.
+                            Arena również dostała utwór, który pogrywając w tle wypełnia "coś" czego po części brakowało. Do tego dodanie dźwięków dla broni i podnoszenia zasobób sprawia, że coś dzieje się więcej niż tylko poruszające obrazki.
+                        </p>
+                        <h5>Nowe zasoby</h5>
+                        <p>
+                            Zasoby - monety i doświadczenie bojowe. Pierwsze do ulepszania broni i reszty wyposarzenia, a drugie do ulepszania postaci. Na chwilę obecną nie mają one zastosowania, ale dzięki testom będę mógł już za jakiś czas dodać
+                            możliwość ulepszania postaci i sprzętu.
+                        </p>
+                        <h5>Wydajność, jakość i funkcjonalność</h5>
+                        <p>
+                            Wydajność jest kluczowa, ale nie można zapominać o tym jak dobrze ma to działać. Musiałem sporo popracować nad scenami, a także nad oknami UI, aby nie tylko wydajność była właściwa, ale także aby to działało.
+                            Wpadłem na ciekawy pomysł - Bootstrap - źródło, które znacząco pomoże w inicjalizacji obiektów, a także łącznik między nimi. Separacja odpowiedziałności jest kluczowa, dlatego łącznik będzie miał sporo do roboty,
+                            tak jak ja oddzielając warstwe logiczną od wizualnej. Samo rozdzielenie tego sprawiło, że kod stał się nie tylko mniejszy ale także czytelniejszy. Wiadomo teraz kto z kim na co i po co.
+                            Kolejną robotą nawego bohatera separacji jest inicjalizacja obiektów, a dokładnie pilnowanie tej kolejności. Do tej pory musiałem bardzo ostrożnie działać z elementami UI, ponieważ bardzo łatwo było o problem z kolejnością łądowania.
+                            Dane dla UI były gotowe, tylko, że UI nie było gotowe. To w zasadzie było główną siłą napędową potrzeby refaktoryzacji i separacji. Bootstrap przyjmując wszystkie komponenty kolejno je uruchamia (po upewnieniu się, że są wyłączone).
+                            Nie które wymagają specjalnego traktowania - UI, przy UI musiałem mieć 100% pewności, że jest załadowane więc z pomocą przyszły magiczne sztuczki - async i Task.
+                            To właśnie dzięki nim było możliwe wymuszenie "cierpliwego" oczekiwania na pełne załadowanie się interfejsu. To oczekiwanie dało mi pewien pomysł - ekran wczytywania. Ogólnie ładowanie się sceny to była nie cała sekunda oczekiwania.
+                            Praktycznie nie widoczna różnica, ale dodanie ekranu ładowania pokazało jak bardzo byłem w błędzie. Proczes ładowania zaczyna się od wybrania (zatwierdzenia wyboru) postaci, aż do pełnego załadowania komponentów przez Bootstraper.
+                            Kiedy wszystko załaduje, ostanie co robi to likwiduje ekran ładowania ujawniając scenę. Sam proces ostatecznie pokazuje, że scena sama w sobie łaaduje się o wiele dłużej. Ale dzięki temu gracz ma gwarancję, że "wchodzi na gotowe".
+                            Przed wprowadzeniem ekranu ładowania, gracz mógł zacząć rozgrywkę momentalnie po zobaczeniu postaci, ale były małe problemy - sporadyczne przycięcia. Dawało to jednoznacznie informację o tym, że coś tam się jeszcze doczytywało.
+                            Teraz, po zniknięciu procesu wczytywania i wejściu na scenę, gracz nie doświadczy już przycięć, tylko płynną rozgrywkę - wszystko co miało się załadować zostało załadowane przy wsparciu Bootstrapera, który dbał o to by się dod załadowało.
+                            <br><br>
+                            Postanowiłem też zminić mapę Areny - nie tylko jest mniejsza, ale także w pełni generowana losowo. Co prawda losowa jest tylko podłoga - no to zawsze coś. Arena ma stałe wymiary - 30x30. Nie pamiętam ile miała przed zmianą,
+                            bo była ona malowana ręcznie, także nie była nawet kwadratowa. Poprawie uległy także granice, które są dopasowane, a jak prędzej - robione na oko.
+                            <br><br>
+                            To tyle. Zmian sporo, można je zobaczyć w changelogu, a my widzimy się za tydzień.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
                 <h2 class="accordion-header" id="heading-121025">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-121025" aria-expanded="true" aria-controls="collapse-121025">
                         12 październik 2025
