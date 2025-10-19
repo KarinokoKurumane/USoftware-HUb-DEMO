@@ -36,11 +36,129 @@
         <div class="accordion" id="changelogAccordion">
             <!-- Dodaj kolejne wersje (odwrotna kolejność)-->
             
+            <!-- Wersja 2510191410 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-2510191410">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2510191410" aria-expanded="true" aria-controls="collapse-2510191410">
+                        2510191410 – Save Update (19 październik 2025)
+                    </button>
+                </h2>
+                <div id="collapse-2510191410" class="accordion-collapse collapse show" aria-labelledby="heading-2510191410" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>System zapisu i odczytu</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Dodano system zapisu i wczytywania danych</li>
+                            <li><span class="badge bg-info">Nowość</span>Zapis danych następuje automatycznie po zakończeniu sesji na danej scenie</li>
+                            <li><span class="badge bg-info">Nowość</span>Wczytanie danych następuje automatycznie po uruchomieniu gry, lub gdy jest to wymagane</li>
+                            <span class="small">
+                                Aktualnie ma to zastosowanie tylko dla rekordów na arenie.
+                            </span>
+                        </ul>
+                        <h5>GUI</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Dodano pasek zdrowia dla przeciwników</li>
+                            <span class="small">
+                                Pasek zdrowia przeciwników jest dostępny tymczasowo. Efekt będzie wynikał z artefaktu.
+                            </span>
+                            <li><span class="badge bg-success">Nowość</span>Dodano paski zdrowia, doświadczenia oraz informacje tekstowe z nimi powiązane dla postaci gracza</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano ikonę czasu dla licznika upływu czasu na scenie</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano ikonę mieczy symbolizującą Battle Rank danej sceny</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano ikonę czaszki oznaczającą pokonanych przeciwników</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano ikonę monet pokazującą zebrane monety na scenie</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano ikonę płomienia z rdzeniem jako symbol doświadczenia bojowego zabranego z przeciwników</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano ikonę płonącego zegara, który informuje gracza o bonusie</li>
+                            <span class="small">
+                                Burst - bonus do zdobywanych zasobów - jest dostępny tymczasowo. Efekt będzie wynikał z cech sceny lub artefaktu.
+                            </span>
+                            <li><span class="badge bg-success">Nowość</span>Dodano okno wyboru broni</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano ikonę broni w karcie postaci, która nie jest wybrana w oknie wyboru postaci</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano do ekranu wyboru broni pełne informacje o danej broni</li>
+                            <li><span class="badge bg-info">Zmiana</span>Poprawiono wygląd okna wyboru postaci - większe karty postaci</li>
+                            <li><span class="badge bg-info">Zmiana</span>Poprawiono wygląd okna podsumownia sceny</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano do ekranu podsumownia sceny informacje o zebranych monetach</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano do ekranu podsumownia sceny informacje o zebranym doświadczeniu bojowym</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano do ekranu podsumownia sceny informacje o rekordach z poprzednich i aktualnej rozgrywki</li>
+                            <li><span class="badge bg-info">Balans</span>Rekordy sceny są sortowane po pokonanych przeciwnikach</li>
+                            <li><span class="badge bg-warning text-dark">Zmiana</span>Ekran podsumowania nie jest już osobną sceną</li>
+                        </ul>
+                        <h5>Postacie</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-info">Zmiana</span>Zmieniono grafiki GUI postaci</li>
+                            <li><span class="badge bg-info">Zmiana</span>Zmieniono grafiki sprite postaci by były bardziej zbliżone do ich wersji GUI</li>
+                        </ul>
+                        <h5>Dźwięki</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Dodano dźwięk łuku</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano dźwięk miecza</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano muzykę do menu</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano muzykę do areny</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano dźwięk zebrania monet</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano dźwięk zebrania doświadczenia</li>
+                        </ul>
+                        <h5>Balans</h5>
+                        <ul class="custom-list">
+                            <li><span class="badge bg-success">Nowość</span>Każda scena ma od tej pory Bootstraper, który ujednolica proces inicjalizacji komponentów zapobiegając błędom</li>
+                            <li><span class="badge bg-warning text-dark">Balans</span>Rozdzielono odpowiedziałność w kodzie dla scen oraz okna wyboru broni i okna podsumowania rozgrywki</li>
+                            <li><span class="badge bg-info">Balans</span>Przeniesiono inicjalizację prefabów do rejestru danych</li>
+                            <span class="small">
+                                Od tej pory wszystkie prefaby są w rejestrze i to z niego będą one pozyskiwane
+                            </span>
+                            <li><span class="badge bg-info">Balans</span>Przeniesiono bazę dźwięków (Clipy) do rejestru danych</li>
+                            <li><span class="badge bg-success">Nowość</span>Dodano ekran ładowania</li>
+                        </ul>
+                        <!-- <div class="image-compare">
+                            <div class="image-box">
+                                <img src="/images/changelogs/enemies_new1.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Nowi przeciwnicy"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalenemies_new1">
+                                <div class="modal fade" id="modalenemies_new1" tabindex="-1" aria-labelledby="modalenemies_new1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-body p-0">
+                                                <img src="/images/changelogs/enemies_new1.png" class="w-100" alt="Nowi przeciwnicy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img src="/images/changelogs/player_rpg1.png"
+                                    class="img-fluid clickable-image"
+                                    alt="Parametry gracza"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalplayer_rpg1">
+                                <div class="modal fade" id="modalplayer_rpg1" tabindex="-1" aria-labelledby="modalplayer_rpg1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-body p-0">
+                                                <img src="/images/changelogs/player_rpg1.png" class="w-100" alt="Parametry gracza">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="video-compare">
+                            <video controls width="100%">
+                                <source src="/videos/changelogs/testplay3.mp4" type="video/mp4">
+                                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                            </video>
+                            <video controls width="100%">
+                                <source src="/videos/changelogs/newrpgsystem1.mp4" type="video/mp4">
+                                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                            </video>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
             <!-- Wersja 2145260925 -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="heading-2145260925">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2145260925" aria-expanded="true" aria-controls="collapse-2145260925">
-                        2145260925 – Enemy Update (26 wrzesień 2025)
+                        2145260925 – Enemy Quality Update (26 wrzesień 2025)
                     </button>
                 </h2>
                 <div id="collapse-2145260925" class="accordion-collapse collapse show" aria-labelledby="heading-2145260925" data-bs-parent="#changelogAccordion">
