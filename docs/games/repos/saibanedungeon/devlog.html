@@ -50,6 +50,39 @@
                 </div>
             </div> -->
 
+            div class="accordion-item">
+                <h2 class="accordion-header" id="heading-261025">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-261025" aria-expanded="true" aria-controls="collapse-261025">
+                        26 październik 2025
+                    </button>
+                </h2>
+                <div id="collapse-261025" class="accordion-collapse collapse show" aria-labelledby="heading-261025" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Błędy, których nie powinno być</h5>
+                        <p>
+                            W tym tygodniu skupiłem się tylko na poprawie istniejących w grze błędów. Istniejących dzięki mojej twórczości (no a jak).
+                            Na pierwszy ogień poszła optymalizacj a kodu pod większą czytelność. Nie jest to może błąd, ale spora poprawa. Pogrupowanie eventów wedle klas, a to wszystko wewnątrz globalnej klasy eventów - spora czytelność,
+                            a może i nawet drzwi do czegoś nowego.
+                            <br>
+                            <br>
+                            Dodanie czegoś nowego nie zawsze oznacza tylko pozytywy. Przypadkiem wykryłem krytyczny błąd tylko przez to, że przypadkiem nacisnąłem klawisze ruchu postacią... na elranie ładowania.
+                            To wystarczyło by kod się wykrzaczył, bo jeden z istotnych elementów, pomimo bycia - nie był. Klasyczny przypadek wywołania czegoś, czego jeszcze nie ma.
+                            <br>
+                            Eventy doczekały się także własnego interface. Nie dotyczy on dokładnie samych eventów, ale wymusza on konkretne metody do subskrybcji i wyłączenia subskrypcji eventów.
+                            Daje to gwarancję, że w kodzie zawsze będzie taka i taka metoda, w której taki i taki event zostanie zasubskrybowany i odsubsrybowany. Jest jeszcze zmienna kontrolna, która blokuje wywowałenie owych metod.
+                            Nie ma powodu do ponownej subkrybcji eventów jeśli one już są w subskrybcji i vice versa.
+                            <br>
+                            Miałem z tym sporo frustracji, dlatego system bootrapów okazał się zbawienny. Powolił mi on zredukować jakiekolwiek błędy tego typu do zera. Jestem tak pewien tego systemu, że mógłbym usunąć wszelkie
+                            dodatkowe "osłony".
+                            <br>
+                            <br>
+                            Dziś strasznie leniwie, ale większość czasu to było rozwiązywanie problemu, który sam stworzyłem przez olanie kliku linijek kodu...
+                            To tyle, widzimy się za tydzień.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <div class="accordion-item">
                 <h2 class="accordion-header" id="heading-191025">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-191025" aria-expanded="true" aria-controls="collapse-191025">
