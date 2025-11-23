@@ -50,7 +50,51 @@
                 </div>
             </div> -->
 
-            div class="accordion-item">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-231125">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-231125" aria-expanded="true" aria-controls="collapse-231125">
+                        23 listopad 2025
+                    </button>
+                </h2>
+                <div id="collapse-231125" class="accordion-collapse collapse show" aria-labelledby="heading-231125" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Mała przerwa</h5>
+                        <p>
+                            Od ostatniego wpisu minęło więcej czasu niż się spodziewałem. Chwilowy odpoczynek od projektu pozwolił mi na zebranie myśli i zaplanowanie kolejnych kroków, a na koniec doszła jeszcze choroba, która po dziś dzień dajesię we znaki.
+                            Na szczęscie już jest lepiej i mogę wrócić do pracy nad grą.
+                        </p>
+                        <br><br>
+                        <h5>Ekran ładowania</h5>
+                        <p>
+                            Na warsztat wziąłem ekran ładowania. Zwykły statyczny obrazek z napisem "Ładowanie..." nie był wystarczający. Chciałem czegoś więcej. Coś co da graczowi informację o tym, że gra faktycznie coś robi w tle.
+                            Więc (tu też za sugestią mojego brata) postanowiłem dodać porady odniośnie rozgrywki oraz pasek postępu ładowania.
+                            <br>
+                            Mechanika porad jest prosta - losowo wybierana jest jedna z dostępnych porad i wyświetlana na ekranie ładowania. Porady są przechowywane w dedykowanym skrypcie, co pozwala na łatwe ich dodawanie i modyfikowanie.
+                            Zastawiam się jeszcze na opracowaniem formatu porad, sposobie ich wyświetlania. Ekrany ładowania są (na tą chwilę stosunkowo krótkie), więc wyślałem nad dodaniem opcji - "kończenia ładowania" za pomocą klawisza (lub kliknęcia w przycisk).
+                            Kiedy zawartość zostanie załadowana, gracz będzie mógł sam zdecydować kiedy chce przejść do gry. Do tego celu posłuży przycisk "Kontynuuj" / "Kliknij aby kontynuować" itp., lub naciśnięcie klawisza (spacja/enter).
+                            To pozwoli na przeczytanie porady, a także na przygotowanie się do rozgrywki.
+                            <br>
+                            Pasek wczytywania... z nim będzie znacznie więcej pracy. Na chwilę obecną jest on tylko wizualnym elementem, który nie odzwierciedla faktycznego postępu wczytywania. W zasadzie to nie odzwierciedla niczego. Poprostu jest.
+                            Wyzwaniem tutaj jednak będzie wybranie jednej z dwóch opcji aktualizacji paska.
+                            <br>
+                            1. Będzie on aktualizowany po każdym przygotowanym elemencie, a ilość "kroków" będzie stała (np. 10 kroków - 10% za każdy krok). Co za tym idzie, dodanie kolejnego elementu do przygotowania będzie wymagało
+                            zmiany ilości kroków, oraz dopisanie linijek kodu do aktualizacji paska. Dużo ręcznej pracy, ale bardzo proste w implementacji.
+                            <br>
+                            2. Tablice tasków. Każdy element, który musi zostać przygotowany zostanie umieszczony jako funkcja w tablicy. Ilość kroków będzie zliczna na podstawie ilości elementów w tablicy.
+                            Ten sposób będzie wymagał więcej pracy przy implementacji, ale za to dodanie kolejnego elementu do przygotowania będzie wymagało tylko dopisania funkcji do tablicy. Nie będzie potrzeby zmiany ilości kroków, ani dopisywania linijek kodu do aktualizacji paska.
+                        </p>
+                        <br><br>
+                        <h5>Co dalej?</h5>
+                        <p>
+                            Po za ekranem ładowania planuję jeszcze zrobić system ustawień oraz dodać mechanikę ulepszania postaci i broni.
+                            <br><br>
+                            Do zobaczenia w następnym devlogu za tydzień!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
                 <h2 class="accordion-header" id="heading-261025">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-261025" aria-expanded="true" aria-controls="collapse-261025">
                         26 październik 2025
