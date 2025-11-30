@@ -51,6 +51,41 @@
             </div> -->
 
             <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-301125">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-301125" aria-expanded="true" aria-controls="collapse-301125">
+                        30 listopad 2025
+                    </button>
+                </h2>
+                <div id="collapse-301125" class="accordion-collapse collapse show" aria-labelledby="heading-301125" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Po(d)stępy ekranu ładowania</h5>
+                        <p>
+                            Od poprzedniego wpisu prace nad ekranem ładowania znacząco przyśpieszyły i ruszyły... do tyłu.
+                            Ilość komplikacji jakie stanęły mi na drodze by doprowadzić cały mechanizm do pełnej funkcjonalności przerosły moje oczekiwania.
+                            To tez nie tak, że liczyłem na to, że wszystko pójdzie jak po maśle, ale Unity i jego mechanizm inicjalizacji komponentów nie ułatwił (i nie ułatwia tego zadania).
+                            <br>
+                            Po mimo komplikacji, nadal wszystko działa - ekrał ładowania zasłania proces ładowania i generowania sceny, a listy z akcjami i zadaniami do wykonania robią swoje.
+                            Problem tylko w tym, że pasek nie może zostać tak ot zaktualizowany. Z działań jakich muszę się podjąc to dopracować metody asynchroniczne (których za bardzo nie lubię stosować w Unity)
+                            oraz zrezygnować z metod Awake i Start.
+                            Te dwie ostatnie są w dużej mierze przyczyną "ukrytych" błędów, które właśnie utrudniają implementację pasku postępu ładowania w ekranie ładowania.
+                        </p>
+                        <br><br>
+                        <h5>Co dalej?</h5>
+                        <p>
+                            Dalej będą kontynuowane prace nad ekranem ładowania.
+                            Tym razem chcę przebudować procesy ładowania danych tak aby nie były one zależne od Awake i Start, gdyż obie metody w wariancie asynchronicznym mają tendencje do wywalania się.
+                            Nie zawsze jest problem, ale po co ryzykować, że u któregoś z graczy akurat pojawi się taki problem.
+                        </p>
+                        <br><br>
+                        <p>
+                            Także walka trwa w najlepsze, mam nadzieję, że już w przyszłym tygodniu będę mógł podzielić się wspaniałymi wieściami, że wszystko działa.
+                            Widzimy się za tydzień.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
                 <h2 class="accordion-header" id="heading-231125">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-231125" aria-expanded="true" aria-controls="collapse-231125">
                         23 listopad 2025
