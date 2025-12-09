@@ -51,6 +51,41 @@
             </div> -->
 
             <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-091225">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-091225" aria-expanded="true" aria-controls="collapse-091225">
+                        9 grudzień 2025
+                    </button>
+                </h2>
+                <div id="collapse-091225" class="accordion-collapse collapse show" aria-labelledby="heading-091225" data-bs-parent="#changelogAccordion">
+                    <div class="accordion-body">
+                        <h5>Intensywne prace</h5>
+                        <p>
+                            Prace nad poprawą ekranu ładowania były tak intensywne, że nawet nie zauważyłem kiedy minęła niedziela. Niestety Unity nie współpracowało ze mną tak jak tego oczekiwałem.
+                            Pojawiło się kilka drobnych problemów, które koniec końców urosły do takiej rangi, że będzie wymagane całkowite przebudowanie procesu ładowania wszystkich zasobów.
+                            <br>
+                            Niestety asynchroniczność, czy też korutyny z Unity są na tyle specyficzne i wymagające, że należy poświęcim im znacznie więcej uwagi.
+                            Pierwotnie część zasobów była umieszczona na scenie przez inspektor. Były to głównie "uchwyty" pod całe dane (gracz, przeciwnicy itd), aby ułatwić sobie życie część skryptów była właśnie w tych obiektach.
+                            Na moje nieszczęście ułatwianie sobie pracy powoduje, że tej pracy staje się więcej.
+                            <br>
+                            Nie pozostaje nic innego, jak przypisywać skrypty do obiektów przez korutyny ładujące wstępne zasoby (awake), a resztę dograć w korutynie uzupełniającej (start).
+                            Jest też druga opcja - wczytywanie wszystkiego w jedej korutynie i to w metodzie start. Ta opcja zakłada, że UI w awake może mieć gdzieś moją potrzebę zatualizowania paska postępu ładowania,
+                            a co za tym idzie trzeba będzie całość przenieść do start, gdzie UI powinno już być gotowe.
+                            <br>
+                        </p>
+                        <br>
+                        <br>
+                        <h5>Przerwa świąteczna i noworoczna</h5>
+                        <p>
+                            Tworzenie gry jest ważne, ale życie realne jest jeszcze ważniejsze - związku z tym udaję się na dłuższą przerwę swiąteczno-noworoczną.
+                            <br>
+                            <br>
+                            Do zobacznia w nowym roku - 4 stycznia 2026!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
                 <h2 class="accordion-header" id="heading-301125">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-301125" aria-expanded="true" aria-controls="collapse-301125">
                         30 listopad 2025
